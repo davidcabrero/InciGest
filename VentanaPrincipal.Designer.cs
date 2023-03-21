@@ -28,25 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaPrincipal));
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tablaIncidencias = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.elegirGrupo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.incidencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.elegirGrupo = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
+            this.tablaIncidencias = new Guna.UI2.WinForms.Guna2DataGridView();
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.incidencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.panelIncidencia = new Bunifu.UI.WinForms.BunifuPanel();
+            this.tituloInci = new Guna.UI2.WinForms.Guna2TileButton();
+            this.descripcionInci = new System.Windows.Forms.Label();
             this.guna2TabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaIncidencias)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            this.panelIncidencia.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2TabControl1
@@ -79,49 +81,83 @@
             this.guna2TabControl1.TabIndex = 1;
             this.guna2TabControl1.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             // 
-            // tabPage1
+            // tabPage3
             // 
-            this.tabPage1.Controls.Add(this.tablaIncidencias);
-            this.tabPage1.Controls.Add(this.guna2VScrollBar1);
-            this.tabPage1.Controls.Add(this.guna2DateTimePicker1);
-            this.tabPage1.Controls.Add(this.bunifuLabel2);
-            this.tabPage1.Controls.Add(this.bunifuLabel1);
-            this.tabPage1.Controls.Add(this.elegirGrupo);
-            this.tabPage1.Location = new System.Drawing.Point(154, 4);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(713, 519);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Incidencias";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage3.Location = new System.Drawing.Point(154, 4);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(713, 519);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Logs";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(154, 4);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(713, 519);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Perfil";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // elegirGrupo
+            // 
+            this.elegirGrupo.BackColor = System.Drawing.Color.Transparent;
+            this.elegirGrupo.BorderRadius = 15;
+            this.elegirGrupo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.elegirGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.elegirGrupo.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.elegirGrupo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.elegirGrupo.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.elegirGrupo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.elegirGrupo.ItemHeight = 30;
+            this.elegirGrupo.Items.AddRange(new object[] {
+            "Mis Incidencias",
+            "Terminal Financiero",
+            "TPV"});
+            this.elegirGrupo.Location = new System.Drawing.Point(78, 16);
+            this.elegirGrupo.Name = "elegirGrupo";
+            this.elegirGrupo.Size = new System.Drawing.Size(168, 36);
+            this.elegirGrupo.TabIndex = 0;
+            this.elegirGrupo.SelectedIndexChanged += new System.EventHandler(this.elegirGrupo_SelectedIndexChanged);
+            // 
+            // guna2VScrollBar1
+            // 
+            this.guna2VScrollBar1.InUpdate = false;
+            this.guna2VScrollBar1.LargeChange = 10;
+            this.guna2VScrollBar1.Location = new System.Drawing.Point(689, 6);
+            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
+            this.guna2VScrollBar1.ScrollbarSize = 18;
+            this.guna2VScrollBar1.Size = new System.Drawing.Size(18, 510);
+            this.guna2VScrollBar1.TabIndex = 6;
             // 
             // tablaIncidencias
             // 
             this.tablaIncidencias.AllowUserToResizeColumns = false;
             this.tablaIncidencias.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.tablaIncidencias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaIncidencias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.tablaIncidencias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaIncidencias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.tablaIncidencias.ColumnHeadersHeight = 4;
             this.tablaIncidencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.tablaIncidencias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.incidencia,
             this.fecha});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tablaIncidencias.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablaIncidencias.DefaultCellStyle = dataGridViewCellStyle3;
             this.tablaIncidencias.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.tablaIncidencias.Location = new System.Drawing.Point(6, 63);
             this.tablaIncidencias.Name = "tablaIncidencias";
@@ -151,49 +187,34 @@
             this.tablaIncidencias.ThemeStyle.RowsStyle.Height = 24;
             this.tablaIncidencias.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.tablaIncidencias.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.tablaIncidencias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaIncidencias_CellClick);
             // 
-            // guna2VScrollBar1
+            // fecha
             // 
-            this.guna2VScrollBar1.InUpdate = false;
-            this.guna2VScrollBar1.LargeChange = 10;
-            this.guna2VScrollBar1.Location = new System.Drawing.Point(689, 6);
-            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
-            this.guna2VScrollBar1.ScrollbarSize = 18;
-            this.guna2VScrollBar1.Size = new System.Drawing.Size(18, 510);
-            this.guna2VScrollBar1.TabIndex = 6;
+            this.fecha.HeaderText = "";
+            this.fecha.MinimumWidth = 6;
+            this.fecha.Name = "fecha";
             // 
-            // guna2DateTimePicker1
+            // incidencia
             // 
-            this.guna2DateTimePicker1.Animated = true;
-            this.guna2DateTimePicker1.AutoRoundedCorners = true;
-            this.guna2DateTimePicker1.BorderRadius = 17;
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(348, 16);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(268, 36);
-            this.guna2DateTimePicker1.TabIndex = 4;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2023, 3, 17, 16, 57, 56, 990);
+            this.incidencia.HeaderText = "";
+            this.incidencia.MinimumWidth = 6;
+            this.incidencia.Name = "incidencia";
             // 
-            // bunifuLabel2
+            // tabPage1
             // 
-            this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.AutoSize = false;
-            this.bunifuLabel2.CursorType = null;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel2.Location = new System.Drawing.Point(270, 16);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(72, 41);
-            this.bunifuLabel2.TabIndex = 2;
-            this.bunifuLabel2.Text = "Fecha:";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.tabPage1.Controls.Add(this.panelIncidencia);
+            this.tabPage1.Controls.Add(this.tablaIncidencias);
+            this.tabPage1.Controls.Add(this.guna2VScrollBar1);
+            this.tabPage1.Controls.Add(this.bunifuLabel1);
+            this.tabPage1.Controls.Add(this.elegirGrupo);
+            this.tabPage1.Location = new System.Drawing.Point(154, 4);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(713, 519);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Incidencias";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // bunifuLabel1
             // 
@@ -212,57 +233,43 @@
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // elegirGrupo
+            // panelIncidencia
             // 
-            this.elegirGrupo.BackColor = System.Drawing.Color.Transparent;
-            this.elegirGrupo.BorderRadius = 15;
-            this.elegirGrupo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.elegirGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.elegirGrupo.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.elegirGrupo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.elegirGrupo.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.elegirGrupo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.elegirGrupo.ItemHeight = 30;
-            this.elegirGrupo.Items.AddRange(new object[] {
-            "Mis Incidencias",
-            "Terminal Financiero",
-            "TPV"});
-            this.elegirGrupo.Location = new System.Drawing.Point(78, 16);
-            this.elegirGrupo.Name = "elegirGrupo";
-            this.elegirGrupo.Size = new System.Drawing.Size(168, 36);
-            this.elegirGrupo.TabIndex = 0;
-            this.elegirGrupo.SelectedIndexChanged += new System.EventHandler(this.elegirGrupo_SelectedIndexChanged);
+            this.panelIncidencia.BackgroundColor = System.Drawing.Color.Transparent;
+            this.panelIncidencia.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelIncidencia.BackgroundImage")));
+            this.panelIncidencia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelIncidencia.BorderColor = System.Drawing.Color.Transparent;
+            this.panelIncidencia.BorderRadius = 3;
+            this.panelIncidencia.BorderThickness = 1;
+            this.panelIncidencia.Controls.Add(this.descripcionInci);
+            this.panelIncidencia.Controls.Add(this.tituloInci);
+            this.panelIncidencia.Location = new System.Drawing.Point(0, -4);
+            this.panelIncidencia.Name = "panelIncidencia";
+            this.panelIncidencia.ShowBorders = true;
+            this.panelIncidencia.Size = new System.Drawing.Size(707, 523);
+            this.panelIncidencia.TabIndex = 8;
             // 
-            // tabPage3
+            // tituloInci
             // 
-            this.tabPage3.Location = new System.Drawing.Point(154, 4);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(713, 519);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Logs";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tituloInci.BorderRadius = 10;
+            this.tituloInci.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.tituloInci.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.tituloInci.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.tituloInci.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.tituloInci.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tituloInci.ForeColor = System.Drawing.Color.White;
+            this.tituloInci.Location = new System.Drawing.Point(6, 7);
+            this.tituloInci.Name = "tituloInci";
+            this.tituloInci.Size = new System.Drawing.Size(698, 68);
+            this.tituloInci.TabIndex = 0;
             // 
-            // tabPage2
+            // descripcionInci
             // 
-            this.tabPage2.Location = new System.Drawing.Point(154, 4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(713, 519);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Perfil";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // incidencia
-            // 
-            this.incidencia.HeaderText = "";
-            this.incidencia.MinimumWidth = 6;
-            this.incidencia.Name = "incidencia";
-            // 
-            // fecha
-            // 
-            this.fecha.HeaderText = "";
-            this.fecha.MinimumWidth = 6;
-            this.fecha.Name = "fecha";
+            this.descripcionInci.Location = new System.Drawing.Point(6, 94);
+            this.descripcionInci.Name = "descripcionInci";
+            this.descripcionInci.Size = new System.Drawing.Size(701, 163);
+            this.descripcionInci.TabIndex = 1;
+            this.descripcionInci.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // VentanaPrincipal
             // 
@@ -274,8 +281,9 @@
             this.Name = "VentanaPrincipal";
             this.Text = "VentanaPrincipal";
             this.guna2TabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tablaIncidencias)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.panelIncidencia.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -283,16 +291,17 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage2;
-        private Guna.UI2.WinForms.Guna2ComboBox elegirGrupo;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
+        private System.Windows.Forms.TabPage tabPage1;
         private Guna.UI2.WinForms.Guna2DataGridView tablaIncidencias;
-        private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
         private System.Windows.Forms.DataGridViewTextBoxColumn incidencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
+        private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
+        private Guna.UI2.WinForms.Guna2ComboBox elegirGrupo;
+        private Bunifu.UI.WinForms.BunifuPanel panelIncidencia;
+        private Guna.UI2.WinForms.Guna2TileButton tituloInci;
+        private System.Windows.Forms.Label descripcionInci;
     }
 }

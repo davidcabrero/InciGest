@@ -21,6 +21,7 @@ namespace InciGest
         {
             InitializeComponent();
             elegirGrupo.SelectedIndex = 0;
+            panelIncidencia.Hide();
         }
 
         private void mostrarIncidencias()
@@ -37,7 +38,17 @@ namespace InciGest
             }
         }
 
-        private void elegirGrupo_SelectedIndexChanged(object sender, EventArgs e)
+        private void tablaIncidencias_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            elegirGrupo.Hide();
+            tablaIncidencias.Hide();
+            panelIncidencia.Show();
+            string seleccion = tablaIncidencias.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+            tituloInci.Text = seleccion;
+            descripcionInci.Text = incidencias.Rows[e.RowIndex]["descripcion"].ToString();
+        }
+
+            private void elegirGrupo_SelectedIndexChanged(object sender, EventArgs e)
         {
             tablaIncidencias.Rows.Clear();
             if (elegirGrupo.SelectedIndex != 0)
