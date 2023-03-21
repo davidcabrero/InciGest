@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -47,5 +48,43 @@ namespace InciGest
                 return false; //No accede
             }
         }
+
+        public DataTable getDatosPorUser(String usuario) //Datos de las incidencias por usuario
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM incidencias WHERE dni_usuarioAsignado = @usuario", conexion);
+                consulta.Parameters.AddWithValue("@usuario", usuario);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable datos = new DataTable();
+                datos.Load(resultado);
+                conexion.Close();
+                return datos;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
+
+        public DataTable getDatosPorGrupo(String grupo) //Datos de las incidencias por grupo
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM incidencias WHERE aplicacion = @grupo", conexion);
+                consulta.Parameters.AddWithValue("@grupo", grupo);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable datos = new DataTable();
+                datos.Load(resultado);
+                conexion.Close();
+                return datos;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
     }
-}
+    }
