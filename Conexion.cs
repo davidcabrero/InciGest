@@ -86,5 +86,64 @@ namespace InciGest
                 throw e;
             }
         }
+
+        public DataTable getDatosPerfil(String user) //Datos de las incidencias por grupo
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM usuario WHERE DNI = @user", conexion);
+                consulta.Parameters.AddWithValue("@user", user);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable datos = new DataTable();
+                datos.Load(resultado);
+                conexion.Close();
+                return datos;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
+
+        public DataTable comprobarRegistro() //Para comprobar que no se repiten datos en la bbdd que son únicos de un usuario.
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM usuario", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable datos = new DataTable();
+                datos.Load(resultado);
+                conexion.Close();
+                return datos;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
+
+        public Boolean editaUser(String DNI, String Nombre, String Apellido, String email) //Para editar el perfil de un usuario
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("UPDATE usuario SET Nombre = @Nombre, Apellido = @Apellido, email = @email WHERE DNI = @DNI", conexion); //datos a introducir, se introducen los string en los campos de la bbdd.
+                consulta.Parameters.AddWithValue("@DNI", DNI);
+                consulta.Parameters.AddWithValue("@Nombre", Nombre);
+                consulta.Parameters.AddWithValue("@Apellido", Apellido);
+                consulta.Parameters.AddWithValue("@email", email);
+
+                consulta.ExecuteNonQuery();
+
+                conexion.Close();
+                return true;
+            }
+            catch (MySqlException e)
+            {
+                return false;
+            }
+        }
     }
     }
