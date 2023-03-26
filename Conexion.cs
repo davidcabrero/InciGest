@@ -87,7 +87,7 @@ namespace InciGest
             }
         }
 
-        public DataTable getDatosPerfil(String user) //Datos de las incidencias por grupo
+        public DataTable getDatosPerfil(String user) //Datos del perfil logeado
         {
             try
             {
@@ -134,6 +134,26 @@ namespace InciGest
                 consulta.Parameters.AddWithValue("@Nombre", Nombre);
                 consulta.Parameters.AddWithValue("@Apellido", Apellido);
                 consulta.Parameters.AddWithValue("@email", email);
+
+                consulta.ExecuteNonQuery();
+
+                conexion.Close();
+                return true;
+            }
+            catch (MySqlException e)
+            {
+                return false;
+            }
+        }
+
+        public Boolean cambiaPassword(String DNI, String password)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("UPDATE usuario SET password = @password WHERE DNI = @DNI", conexion); //datos a introducir, se introducen los string en los campos de la bbdd.
+                consulta.Parameters.AddWithValue("@DNI", DNI);
+                consulta.Parameters.AddWithValue("@password", password);
 
                 consulta.ExecuteNonQuery();
 

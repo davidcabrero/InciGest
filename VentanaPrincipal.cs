@@ -17,8 +17,10 @@ namespace InciGest
     {
         Conexion conexion = new Conexion();
         DataTable incidencias = new DataTable();
+        DataTable perfil = new DataTable();
 
         string user = VentanaLogIn.usuario;
+        bool cambioPassword = false; //Para saber si edita información de perfil o cambio de contraseña
         public VentanaPrincipal()
         {
             InitializeComponent();
@@ -44,17 +46,21 @@ namespace InciGest
 
         private void tablaIncidencias_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Mostrar componentes de la incidencia
-            elegirGrupo.Hide();
-            tablaIncidencias.Hide();
-            grupoLabel.Hide();
-            panelIncidencia.Show();
-            //Establecer datos de la incidencia pulsada
-            tituloInci.Text = incidencias.Rows[e.RowIndex]["titulo"].ToString();
-            descripcionInci.Text = incidencias.Rows[e.RowIndex]["descripcion"].ToString();
-            aplicacion.Text = incidencias.Rows[e.RowIndex]["aplicacion"].ToString();
-            prioridad.Text = incidencias.Rows[e.RowIndex]["prioridad"].ToString();
-            fechaInci.Text = incidencias.Rows[e.RowIndex]["fecha"].ToString();
+            if (e.RowIndex >= 0)
+            {
+                incidencias = conexion.getDatosPorUser(user);
+                //Mostrar componentes de la incidencia
+                elegirGrupo.Hide();
+                tablaIncidencias.Hide();
+                grupoLabel.Hide();
+                panelIncidencia.Show();
+                //Establecer datos de la incidencia pulsada
+                tituloInci.Text = incidencias.Rows[e.RowIndex]["titulo"].ToString();
+                descripcionInci.Text = incidencias.Rows[e.RowIndex]["descripcion"].ToString();
+                aplicacion.Text = incidencias.Rows[e.RowIndex]["aplicacion"].ToString();
+                prioridad.Text = incidencias.Rows[e.RowIndex]["prioridad"].ToString();
+                fechaInci.Text = incidencias.Rows[e.RowIndex]["fecha"].ToString();
+            }
         }
 
         private void elegirGrupo_SelectedIndexChanged(object sender, EventArgs e)
@@ -109,9 +115,20 @@ namespace InciGest
 
         private void botonEditarPerfil_Click(object sender, EventArgs e)
         {
+            //Establecer ventana
+            nuevaPasswordLabel.Visible = false;
+            editPassword.Visible = false;
+            labelNombre.Visible = true;
+            labelEmail.Visible = true;
+            labelApellido.Visible = true;
+            nombreText.Visible = true;
+            emailText.Visible = true;
+            apellidoText.Visible = true;
+
+            cambioPassword = false;
             panelEditarPerfil.Show();
             perfilEditado.LabelText = user;
-            
+
             //Muestra datos actuales
             incidencias = conexion.getDatosPerfil(user);
             nombreText.Text = incidencias.Rows[0]["nombre"].ToString();
@@ -121,12 +138,35 @@ namespace InciGest
 
         private void botonGuardarPerfil_Click(object sender, EventArgs e)
         {
-            incidencias = conexion.comprobarRegistro();
-            if ((emailText.Text) != (incidencias.Rows[0]["email"].ToString())) //Siempre que el email no esté cogida ya.
+            if (!cambioPassword) //Editar perfil
             {
-                if (conexion.editaUser(user, nombreText.Text, apellidoText.Text, emailText.Text))
+                incidencias = conexion.comprobarRegistro();
+                perfil = conexion.getDatosPerfil(user);
+                if ((!emailText.Text.Equals(incidencias.Rows[0]["email"].ToString())) || emailText.Text.Equals(perfil.Rows[0]["email"].ToString())) //Siempre que el email no esté cogida ya (Excepto el suyo propio).
                 {
-                    MessageBox.Show("Se han guardado sus datos");
+                    if (conexion.editaUser(user, nombreText.Text, apellidoText.Text, emailText.Text))
+                    {
+                        MessageBox.Show("Se han guardado sus datos");
+                        panelEditarPerfil.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El email introducido ya se encuentra registrado. Intruce otro");
+                }
+            }
+            else //Cambio de contraseña
+            {
+                //Se encripta la contraseña en la bbdd.
+                String textoPassword = editPassword.Text;
+                string myHash = BCrypt.Net.BCrypt.HashPassword(textoPassword, BCrypt.Net.BCrypt.GenerateSalt());
+                if (conexion.cambiaPassword(user, myHash))
+                {
+                    MessageBox.Show("Se ha cambiado la contraseña");
                     panelEditarPerfil.Hide();
                 }
                 else
@@ -134,15 +174,29 @@ namespace InciGest
                     MessageBox.Show("Error");
                 }
             }
-            else
-            {
-                MessageBox.Show("El email introducido ya se encuentra registrado. Intruce otro");
-            }
         }
 
         private void botonCancelarEdicion_Click(object sender, EventArgs e)
         {
             panelEditarPerfil.Hide();
+        }
+
+        private void botonCambiarPassword_Click(object sender, EventArgs e)
+        {
+            nuevaPasswordLabel.Visible = true;
+            editPassword.Visible = true;
+            editPassword.PasswordChar = '·';
+
+            labelNombre.Visible = false;
+            labelEmail.Visible = false;
+            labelApellido.Visible = false;
+            nombreText.Visible = false;
+            emailText.Visible = false;
+            apellidoText.Visible = false;
+
+            cambioPassword = true;
+            panelEditarPerfil.Show();
+            perfilEditado.LabelText = user;
         }
     }
 }
