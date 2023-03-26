@@ -13,6 +13,7 @@ namespace InciGest
     public partial class VentanaLogIn : Form
     {
         Conexion conexion = new Conexion();
+        DataTable perfil = new DataTable();
         public VentanaLogIn()
         {
             InitializeComponent();
@@ -28,9 +29,19 @@ namespace InciGest
             {
                 this.Hide();
                 usuario = userBox.Text;
-                VentanaPrincipal ventanaprincipal = new VentanaPrincipal();
+                perfil = conexion.getDatosPerfil(userBox.Text);
 
-                ventanaprincipal.Show();
+                if (perfil.Rows[0]["perfil"].ToString() == "1") //Perfil de desarrollador
+                {
+                    VentanaPrincipal ventanaprincipal = new VentanaPrincipal();
+                    ventanaprincipal.Show();
+                }
+
+                if (perfil.Rows[0]["perfil"].ToString() == "2") //Perfil de administrador
+                {
+                    VentanaAdministrador ventanaAdmin = new VentanaAdministrador();
+                    ventanaAdmin.Show();
+                }
             }
             else
             {
