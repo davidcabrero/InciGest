@@ -21,6 +21,7 @@ namespace InciGest
         }
 
         internal static string usuario;
+        internal static int tipoPerfil;
 
 
         private void botonLogIn_Click(object sender, EventArgs e)
@@ -33,13 +34,15 @@ namespace InciGest
 
                 if (perfil.Rows[0]["perfil"].ToString() == "1") //Perfil de desarrollador
                 {
+                    tipoPerfil = 1;
                     VentanaPrincipal ventanaprincipal = new VentanaPrincipal();
                     ventanaprincipal.Show();
                 }
 
                 if (perfil.Rows[0]["perfil"].ToString() == "2") //Perfil de administrador
                 {
-                    VentanaAdministrador ventanaAdmin = new VentanaAdministrador();
+                    tipoPerfil = 2;
+                    VentanaPrincipal ventanaAdmin = new VentanaPrincipal();
                     ventanaAdmin.Show();
                 }
             }

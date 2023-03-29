@@ -155,7 +155,6 @@ namespace InciGest
                 MySqlCommand consulta = new MySqlCommand("UPDATE usuario SET password = @password WHERE DNI = @DNI", conexion); //datos a introducir, se introducen los string en los campos de la bbdd.
                 consulta.Parameters.AddWithValue("@DNI", DNI);
                 consulta.Parameters.AddWithValue("@password", password);
-
                 consulta.ExecuteNonQuery();
 
                 conexion.Close();
@@ -164,6 +163,34 @@ namespace InciGest
             catch (MySqlException e)
             {
                 return false;
+            }
+        }
+
+        public Boolean insertaIncidencia(String titulo, String prioridad, String ip, String grupo, String aplicacion, String descripcion, String dniUsuario, String fecha)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("INSERT INTO incidencias (titulo, prioridad, ip_terminal, grupo_soporte, aplicacion, descripcion, dni_usuario, fecha) VALUES (@titulo, @prioridad, @ip_terminal, @grupo_soporte, @aplicacion, @descripcion, @dni_usuario, @fecha)", conexion); //datos a introducir, se introducen los string en los campos de la bbdd.
+                consulta.Parameters.AddWithValue("@titulo", titulo);
+                consulta.Parameters.AddWithValue("@prioridad", prioridad);
+                consulta.Parameters.AddWithValue("@ip_terminal", ip);
+                consulta.Parameters.AddWithValue("@grupo_soporte", grupo);
+                consulta.Parameters.AddWithValue("@aplicacion", aplicacion);
+                consulta.Parameters.AddWithValue("@descripcion", descripcion);
+                consulta.Parameters.AddWithValue("@dni_usuario", dniUsuario);
+                consulta.Parameters.AddWithValue("@fecha", fecha);
+
+                consulta.ExecuteNonQuery();
+
+                conexion.Close();
+                return true;
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e.Message.ToString());
+                return false;
+
             }
         }
     }

@@ -127,12 +127,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
-    <Compile Include="VentanaAdministrador.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VentanaAdministrador.Designer.cs">
-      <DependentUpon>VentanaAdministrador.cs</DependentUpon>
-    </Compile>
     <Compile Include="VentanaLogIn.cs">
       <SubType>Form</SubType>
     </Compile>

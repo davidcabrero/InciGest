@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms.Suite;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,10 +25,20 @@ namespace InciGest
         public VentanaPrincipal()
         {
             InitializeComponent();
+            establecerPerfil();
             elegirGrupo.SelectedIndex = 0;
             panelIncidencia.Hide();
             panelEditarPerfil.Hide();
             perfilUuario.LabelText = user;
+            panelCrearInci.Hide();
+        }
+
+        public void establecerPerfil()
+        {
+            if (VentanaLogIn.tipoPerfil != 2) //La sección admin solo aparece si el usuario es administrador.
+            {
+                this.menuPrincipal.TabPages.Remove(this.adminTab);
+            }
         }
 
         private void mostrarIncidencias()
@@ -97,7 +108,7 @@ namespace InciGest
 
         private void menuPrincipal_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (menuPrincipal.SelectedIndex == 3) //Cierra sesión
+            if (menuPrincipal.SelectedTab.Text.Equals("Cerrar Sesión")) //Cierra sesión
             {
                 VentanaLogIn.usuario = "";
                 this.Hide();
@@ -197,6 +208,37 @@ namespace InciGest
             cambioPassword = true;
             panelEditarPerfil.Show();
             perfilEditado.LabelText = user;
+        }
+
+        private void crearIncidencia()
+        {
+            string fecha = DateTime.UtcNow.ToString("dd/MM/yyyy");
+
+            if (conexion.insertaIncidencia(tituloText.Text, eligePrioridad.SelectedItem.ToString(), ipText.Text, eligeGrupo.SelectedItem.ToString(), eligeAplicacion.SelectedItem.ToString(), descripcionText.Text, user, fecha))
+            {
+                MessageBox.Show("Incidencia Añadida"); //Se añade la inci
+                panelCrearInci.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Error"); //Fallo
+            }
+        }
+
+        private void botonCrearInci_Click(object sender, EventArgs e)
+        {
+            panelCrearInci.Show();
+            panelCrearInci.BringToFront();
+        }
+
+        private void botonCancelar_Click(object sender, EventArgs e)
+        {
+            panelCrearInci.Hide();
+        }
+
+        private void botonCrear_Click(object sender, EventArgs e)
+        {
+            crearIncidencia();
         }
     }
 }
