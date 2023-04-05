@@ -31,6 +31,7 @@ namespace InciGest
             panelEditarPerfil.Hide();
             perfilUuario.LabelText = user;
             panelCrearInci.Hide();
+            panelRegistroUsuario.Hide();
         }
 
         public void establecerPerfil()
@@ -49,9 +50,10 @@ namespace InciGest
 
             for (int i = 0; i < numFilas; i++)
             {
+                string codInci = incidencias.Rows[i]["id_incidencia"].ToString();
                 string tituloInci = incidencias.Rows[i]["titulo"].ToString();
                 string fechaInci = incidencias.Rows[i]["fecha"].ToString();
-                tablaIncidencias.Rows.Add(new Object[] { tituloInci, fechaInci });
+                tablaIncidencias.Rows.Add(new Object[] { codInci, tituloInci, fechaInci });
             }
         }
 
@@ -59,24 +61,30 @@ namespace InciGest
         {
             if (e.RowIndex >= 0)
             {
-                incidencias = conexion.getDatosPorUser(user);
+                int fila = e.RowIndex;
+                String codInci = tablaIncidencias.Rows[fila].Cells[0].Value.ToString();
+
+                incidencias = conexion.getDatosInci(user, codInci);
+
                 //Mostrar componentes de la incidencia
                 elegirGrupo.Hide();
                 tablaIncidencias.Hide();
                 grupoLabel.Hide();
                 panelIncidencia.Show();
                 //Establecer datos de la incidencia pulsada
-                tituloInci.Text = incidencias.Rows[e.RowIndex]["titulo"].ToString();
-                descripcionInci.Text = incidencias.Rows[e.RowIndex]["descripcion"].ToString();
-                aplicacion.Text = incidencias.Rows[e.RowIndex]["aplicacion"].ToString();
-                prioridad.Text = incidencias.Rows[e.RowIndex]["prioridad"].ToString();
-                fechaInci.Text = incidencias.Rows[e.RowIndex]["fecha"].ToString();
+
+                    tituloInci.Text = incidencias.Rows[0]["titulo"].ToString();
+                    descripcionInci.Text = incidencias.Rows[0]["descripcion"].ToString();
+                    aplicacion.Text = incidencias.Rows[0]["aplicacion"].ToString();
+                    prioridad.Text = incidencias.Rows[0]["prioridad"].ToString();
+                    fechaInci.Text = incidencias.Rows[0]["fecha"].ToString();
             }
         }
 
         private void elegirGrupo_SelectedIndexChanged(object sender, EventArgs e)
         {
             tablaIncidencias.Rows.Clear();
+
             if (elegirGrupo.SelectedIndex != 0)
             {
                 string grupo = elegirGrupo.SelectedItem.ToString();
@@ -86,9 +94,11 @@ namespace InciGest
 
                 for (int i = 0; i < numFilas; i++)
                 {
+                    string codInci = incidencias.Rows[i]["id_incidencia"].ToString();
                     string tituloInci = incidencias.Rows[i]["titulo"].ToString();
                     string fechaInci = incidencias.Rows[i]["fecha"].ToString();
-                    tablaIncidencias.Rows.Add(new Object[] { tituloInci, fechaInci });
+                    string prioridad = incidencias.Rows[i]["fecha"].ToString();
+                    tablaIncidencias.Rows.Add(new Object[] { codInci, tituloInci, fechaInci });
                 }
             }
             else
@@ -101,6 +111,7 @@ namespace InciGest
         {
             grupoLabel.Show();
             panelIncidencia.Hide();
+            
             elegirGrupo.Show();
             tablaIncidencias.Show();
             //elegirGrupo.SelectedIndex = 0;
@@ -212,9 +223,7 @@ namespace InciGest
 
         private void crearIncidencia()
         {
-            string fecha = DateTime.UtcNow.ToString("dd/MM/yyyy");
-
-            if (conexion.insertaIncidencia(tituloText.Text, eligePrioridad.SelectedItem.ToString(), ipText.Text, eligeGrupo.SelectedItem.ToString(), eligeAplicacion.SelectedItem.ToString(), descripcionText.Text, user, fecha))
+            if (conexion.insertaIncidencia(tituloText.Text, eligePrioridad.SelectedItem.ToString(), ipText.Text, eligeGrupo.SelectedItem.ToString(), eligeAplicacion.SelectedItem.ToString(), descripcionText.Text, user))
             {
                 MessageBox.Show("Incidencia Añadida"); //Se añade la inci
                 panelCrearInci.Hide();
@@ -239,6 +248,47 @@ namespace InciGest
         private void botonCrear_Click(object sender, EventArgs e)
         {
             crearIncidencia();
+        }
+
+        private void botonEditarUsuarios_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void botonAdministrarInci_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void botonVerEstadisticas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void botonRegistroUsuario_Click(object sender, EventArgs e)
+        {
+            panelRegistroUsuario.Show();
+            panelRegistroUsuario.BringToFront();
+        }
+
+        private void CancelarNewUser_Click(object sender, EventArgs e)
+        {
+            panelRegistroUsuario.Hide();
+        }
+
+        private void GuardarNewUser_Click(object sender, EventArgs e)
+        {
+            String textoPassword = editPassword.Text;
+            string myHash = BCrypt.Net.BCrypt.HashPassword(textoPassword, BCrypt.Net.BCrypt.GenerateSalt());
+            if (conexion.insertaUsuario(nombreNuevo.Text, perfilNuevo.SelectedItem.ToString(), apellidoNuevo.Text, dniNuevo.Text, emailNuevo.Text, myHash))
+            {
+                MessageBox.Show("Usuario Registrado"); //Se añade el usuario
+                panelRegistroUsuario.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Error"); //Fallo
+            }
         }
     }
 }
