@@ -112,7 +112,7 @@ namespace InciGest
         {
             try
             {
-                conexion.Close() ; //Cierra la conexión anterior
+                conexion.Close(); //Cierra la conexión anterior
                 conexion.Open();
                 MySqlCommand consulta = new MySqlCommand("SELECT * FROM usuario WHERE DNI = @user", conexion);
                 consulta.Parameters.AddWithValue("@user", user);
@@ -259,4 +259,4 @@ namespace InciGest
             }
         }
     }
-    }
+}

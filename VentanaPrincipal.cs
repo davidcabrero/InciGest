@@ -75,11 +75,11 @@ namespace InciGest
                 panelIncidencia.Show();
                 //Establecer datos de la incidencia pulsada
 
-                    tituloInci.Text = incidencias.Rows[0]["titulo"].ToString();
-                    descripcionInci.Text = incidencias.Rows[0]["descripcion"].ToString();
-                    aplicacion.Text = incidencias.Rows[0]["aplicacion"].ToString();
-                    prioridad.Text = incidencias.Rows[0]["prioridad"].ToString();
-                    fechaInci.Text = incidencias.Rows[0]["fecha"].ToString();
+                tituloInci.Text = incidencias.Rows[0]["titulo"].ToString();
+                descripcionInci.Text = incidencias.Rows[0]["descripcion"].ToString();
+                aplicacion.Text = incidencias.Rows[0]["aplicacion"].ToString();
+                prioridad.Text = incidencias.Rows[0]["prioridad"].ToString();
+                fechaInci.Text = incidencias.Rows[0]["fecha"].ToString();
             }
         }
 
@@ -113,7 +113,7 @@ namespace InciGest
         {
             grupoLabel.Show();
             panelIncidencia.Hide();
-            
+
             elegirGrupo.Show();
             tablaIncidencias.Show();
             //elegirGrupo.SelectedIndex = 0;
@@ -280,8 +280,10 @@ namespace InciGest
 
         private void GuardarNewUser_Click(object sender, EventArgs e)
         {
+            incidencias = conexion.comprobarRegistro();
+
             int perfil = 0;
-            if (perfilNuevo.SelectedItem.ToString().Equals("Desarrollador")) 
+            if (perfilNuevo.SelectedItem.ToString().Equals("Desarrollador"))
             {
                 perfil = 1;
             }
@@ -289,16 +291,25 @@ namespace InciGest
             {
                 perfil = 2;
             }
+
             String textoPassword = editPassword.Text;
             string myHash = BCrypt.Net.BCrypt.HashPassword(textoPassword, BCrypt.Net.BCrypt.GenerateSalt());
-            if (conexion.insertaUsuario(nombreNuevo.Text, perfil, apellidoNuevo.Text, dniNuevo.Text, emailNuevo.Text, myHash))
+
+            if ((!emailNuevo.Text.Equals(incidencias.Rows[0]["email"].ToString())) || (!dniNuevo.Text.Equals(incidencias.Rows[0]["DNI"].ToString()))) //Siempre que el email y el dni no estén cogidos ya.
             {
-                MessageBox.Show("Usuario Registrado"); //Se añade el usuario
-                panelRegistroUsuario.Hide();
+                if (conexion.insertaUsuario(nombreNuevo.Text, perfil, apellidoNuevo.Text, dniNuevo.Text, emailNuevo.Text, myHash))
+                {
+                    MessageBox.Show("Usuario Registrado"); //Se añade el usuario
+                    panelRegistroUsuario.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Error"); //Fallo
+                }
             }
             else
             {
-                MessageBox.Show("Error"); //Fallo
+                MessageBox.Show("El email o DNI introducido ya se encuentra registrado. Intruce otro");
             }
         }
 
