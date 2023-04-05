@@ -168,6 +168,25 @@ namespace InciGest
             }
         }
 
+        public Boolean asignarInci(String usuarioAsignado) //Para asignar una incidencia
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("UPDATE incidencias SET dni_usuarioAsignado = @usuarioAsignado", conexion); //datos a introducir, se introducen los string en los campos de la bbdd.
+                consulta.Parameters.AddWithValue("@usuarioAsignado", usuarioAsignado);
+
+                consulta.ExecuteNonQuery();
+
+                conexion.Close();
+                return true;
+            }
+            catch (MySqlException e)
+            {
+                return false;
+            }
+        }
+
         public Boolean cambiaPassword(String DNI, String password)
         {
             try
@@ -214,7 +233,7 @@ namespace InciGest
             }
         }
 
-        public Boolean insertaUsuario(String nombre, String perfil, String apellido, String dni, String email, String password)
+        public Boolean insertaUsuario(String nombre, int perfil, String apellido, String dni, String email, String password)
         {
             try
             {

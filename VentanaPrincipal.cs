@@ -39,6 +39,8 @@ namespace InciGest
             if (VentanaLogIn.tipoPerfil != 2) //La sección admin solo aparece si el usuario es administrador.
             {
                 this.menuPrincipal.TabPages.Remove(this.adminTab);
+                botonAsignar.Visible = false;
+                elegirUsuario.Visible = false;
             }
         }
 
@@ -278,9 +280,18 @@ namespace InciGest
 
         private void GuardarNewUser_Click(object sender, EventArgs e)
         {
+            int perfil = 0;
+            if (perfilNuevo.SelectedItem.ToString().Equals("Desarrollador")) 
+            {
+                perfil = 1;
+            }
+            if (perfilNuevo.SelectedItem.ToString().Equals("Administrador"))
+            {
+                perfil = 2;
+            }
             String textoPassword = editPassword.Text;
             string myHash = BCrypt.Net.BCrypt.HashPassword(textoPassword, BCrypt.Net.BCrypt.GenerateSalt());
-            if (conexion.insertaUsuario(nombreNuevo.Text, perfilNuevo.SelectedItem.ToString(), apellidoNuevo.Text, dniNuevo.Text, emailNuevo.Text, myHash))
+            if (conexion.insertaUsuario(nombreNuevo.Text, perfil, apellidoNuevo.Text, dniNuevo.Text, emailNuevo.Text, myHash))
             {
                 MessageBox.Show("Usuario Registrado"); //Se añade el usuario
                 panelRegistroUsuario.Hide();
@@ -288,6 +299,19 @@ namespace InciGest
             else
             {
                 MessageBox.Show("Error"); //Fallo
+            }
+        }
+
+        private void botonAsignar_Click(object sender, EventArgs e)
+        {
+            if (conexion.asignarInci(elegirUsuario.SelectedItem.ToString()))
+            {
+                MessageBox.Show("Se ha asignado la incidencia");
+                panelEditarPerfil.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Error");
             }
         }
     }
