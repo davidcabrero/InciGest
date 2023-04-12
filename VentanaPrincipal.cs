@@ -1,9 +1,12 @@
 ﻿using Guna.UI2.WinForms.Suite;
+using Microsoft.Win32;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
@@ -32,6 +35,7 @@ namespace InciGest
             perfilUuario.LabelText = user;
             panelCrearInci.Hide();
             panelRegistroUsuario.Hide();
+            textoArchivo.Hide();
         }
 
         public void establecerPerfil()
@@ -135,6 +139,10 @@ namespace InciGest
                 String apellido = incidencias.Rows[0]["apellido"].ToString();
                 labelPerfil.Text = "Bienvenido/a, " + nombre + " " + apellido;
             }
+            if (menuPrincipal.SelectedIndex == 1)
+            {
+                textoArchivo.Hide();
+            }
         }
 
         private void botonEditarPerfil_Click(object sender, EventArgs e)
@@ -225,6 +233,8 @@ namespace InciGest
 
         private void crearIncidencia()
         {
+            panelCrearInci.Show();
+            panelRegistroUsuario.BringToFront();
             if (conexion.insertaIncidencia(tituloText.Text, eligePrioridad.SelectedItem.ToString(), ipText.Text, eligeGrupo.SelectedItem.ToString(), eligeAplicacion.SelectedItem.ToString(), descripcionText.Text, user))
             {
                 MessageBox.Show("Incidencia Añadida"); //Se añade la inci
@@ -287,9 +297,17 @@ namespace InciGest
             {
                 perfil = 1;
             }
+            else
+            {
+                MessageBox.Show("Complete todos los campos");
+            }
             if (perfilNuevo.SelectedItem.ToString().Equals("Administrador"))
             {
                 perfil = 2;
+            }
+            else
+            {
+                MessageBox.Show("Complete todos los campos");
             }
 
             String textoPassword = editPassword.Text;
@@ -324,6 +342,46 @@ namespace InciGest
             {
                 MessageBox.Show("Error");
             }
+        }
+
+        private void elegirArchivo_Click(object sender, EventArgs e)
+        {
+            explorador.ShowDialog();
+            elegirDirectorio.Text = explorador.SelectedPath.ToString();
+        }
+
+        public static ArrayList archivosLogs;
+
+        private void obtenerLogs()
+        {
+            String nombreLog = "";
+            if (eligeAplicacion.SelectedIndex == 0) //Log de Terminal Financiero
+            {
+                String dia = fechaLog.Value.Day.ToString();
+                String mes = fechaLog.Value.Month.ToString();
+                String year = fechaLog.Value.Year.ToString();
+
+                nombreLog = year + mes + dia + "_LOGS";
+            }
+
+            string[] archivos = Directory.GetFiles(explorador.SelectedPath, "*"+nombreLog+"*.*");
+            foreach (string archivo in archivos)
+            {
+                archivosLogs.Add(archivo);
+            }
+        }
+
+        private void aceptarLog_Click(object sender, EventArgs e)
+        {
+            obtenerLogs();
+            //textoArchivo.Text = File.ReadAllText(explorador.SelectedPath);
+            textoArchivo.Show();
+            textoArchivo.BringToFront();
+        }
+
+        private void extraerOperaciones()
+        {
+
         }
     }
 }
