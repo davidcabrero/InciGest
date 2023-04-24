@@ -69,14 +69,49 @@ namespace InciGest
             }
         }
 
-        public DataTable getDatosInci(String usuario, String codInci) //Datos de las incidencias por usuario
+        public DataTable getDatosInci(int codInci) //Datos de las incidencias por usuario
         {
             try
             {
                 conexion.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM incidencias WHERE dni_usuarioAsignado = @usuario AND id_incidencia = @codInci", conexion);
-                consulta.Parameters.AddWithValue("@usuario", usuario);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM incidencias WHERE id_incidencia = @codInci", conexion);
                 consulta.Parameters.AddWithValue("@codInci", codInci);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable datos = new DataTable();
+                datos.Load(resultado);
+                conexion.Close();
+                return datos;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
+
+        public DataTable getDatosPorAplicacion() //Datos de las aplicaciones a las que se les da soporte
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM aplicaciones", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable datos = new DataTable();
+                datos.Load(resultado);
+                conexion.Close();
+                return datos;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
+
+        public DataTable getDatosPorUsuarios() //Datos de usuarios
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM usuario", conexion);
                 MySqlDataReader resultado = consulta.ExecuteReader();
                 DataTable datos = new DataTable();
                 datos.Load(resultado);
@@ -168,14 +203,14 @@ namespace InciGest
             }
         }
 
-        public Boolean asignarInci(String usuarioAsignado) //Para asignar una incidencia
+        public Boolean asignarInci(String usuarioAsignado, int codInci) //Para asignar una incidencia
         {
             try
             {
                 conexion.Open();
-                MySqlCommand consulta = new MySqlCommand("UPDATE incidencias SET dni_usuarioAsignado = @usuarioAsignado", conexion); //datos a introducir, se introducen los string en los campos de la bbdd.
+                MySqlCommand consulta = new MySqlCommand("UPDATE incidencias SET dni_usuarioAsignado = @usuarioAsignado WHERE id_incidencia = @codInci", conexion); //datos a introducir, se introducen los string en los campos de la bbdd.
                 consulta.Parameters.AddWithValue("@usuarioAsignado", usuarioAsignado);
-
+                consulta.Parameters.AddWithValue("@codInci", codInci);
                 consulta.ExecuteNonQuery();
 
                 conexion.Close();

@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -46,6 +47,20 @@ namespace InciGest
                 botonAsignar.Visible = false;
                 elegirUsuario.Visible = false;
             }
+            else
+            {
+                int numFilas = 0; //Sacar número de usuarios.
+                incidencias = conexion.getDatosPorUsuarios();
+                numFilas = incidencias.Rows.Count;
+
+                for (int i = 0; i < numFilas; i++)
+                {
+                    string nombre = incidencias.Rows[i]["nombre"].ToString();
+                    string apellido = incidencias.Rows[i]["apellido"].ToString();
+                    string dni = incidencias.Rows[i]["DNI"].ToString();
+                    elegirUsuario.Items.Add(dni);
+                }
+            }
         }
 
         private void mostrarIncidencias()
@@ -68,9 +83,11 @@ namespace InciGest
             if (e.RowIndex >= 0)
             {
                 int fila = e.RowIndex;
-                String codInci = tablaIncidencias.Rows[fila].Cells[0].Value.ToString();
+                String codInci1 = tablaIncidencias.Rows[e.RowIndex].Cells[0].Value.ToString();
+                int codInci = Int32.Parse(codInci1);
+                Console.WriteLine(codInci);
 
-                incidencias = conexion.getDatosInci(user, codInci);
+                incidencias = conexion.getDatosInci(codInci);
 
                 //Mostrar componentes de la incidencia
                 elegirGrupo.Hide();
@@ -84,6 +101,8 @@ namespace InciGest
                 aplicacion.Text = incidencias.Rows[0]["aplicacion"].ToString();
                 prioridad.Text = incidencias.Rows[0]["prioridad"].ToString();
                 fechaInci.Text = incidencias.Rows[0]["fecha"].ToString();
+                idInci.Text = incidencias.Rows[0]["id_incidencia"].ToString();
+                userAsignado.Text = incidencias.Rows[0]["dni_usuarioAsignado"].ToString();
             }
         }
 
@@ -104,7 +123,7 @@ namespace InciGest
                     string tituloInci = incidencias.Rows[i]["titulo"].ToString();
                     string fechaInci = incidencias.Rows[i]["fecha"].ToString();
                     string prioridad = incidencias.Rows[i]["fecha"].ToString();
-                    tablaIncidencias.Rows.Add(new Object[] { codInci, tituloInci, fechaInci });
+                    tablaIncidencias.Rows.Add(new Object[] { codInci, tituloInci, fechaInci, prioridad });
                 }
             }
             else
@@ -138,10 +157,6 @@ namespace InciGest
                 String nombre = incidencias.Rows[0]["nombre"].ToString();
                 String apellido = incidencias.Rows[0]["apellido"].ToString();
                 labelPerfil.Text = "Bienvenido/a, " + nombre + " " + apellido;
-            }
-            if (menuPrincipal.SelectedIndex == 1)
-            {
-                textoArchivo.Hide();
             }
         }
 
@@ -333,7 +348,8 @@ namespace InciGest
 
         private void botonAsignar_Click(object sender, EventArgs e)
         {
-            if (conexion.asignarInci(elegirUsuario.SelectedItem.ToString()))
+            int codInci = Int32.Parse(idInci.Text);
+            if (conexion.asignarInci(elegirUsuario.SelectedItem.ToString(), codInci))
             {
                 MessageBox.Show("Se ha asignado la incidencia");
                 panelEditarPerfil.Hide();
@@ -344,44 +360,9 @@ namespace InciGest
             }
         }
 
-        private void elegirArchivo_Click(object sender, EventArgs e)
+        private void abrirAnalizador_Click(object sender, EventArgs e)
         {
-            explorador.ShowDialog();
-            elegirDirectorio.Text = explorador.SelectedPath.ToString();
-        }
-
-        public static ArrayList archivosLogs;
-
-        private void obtenerLogs()
-        {
-            String nombreLog = "";
-            if (eligeAplicacion.SelectedIndex == 0) //Log de Terminal Financiero
-            {
-                String dia = fechaLog.Value.Day.ToString();
-                String mes = fechaLog.Value.Month.ToString();
-                String year = fechaLog.Value.Year.ToString();
-
-                nombreLog = year + mes + dia + "_LOGS";
-            }
-
-            string[] archivos = Directory.GetFiles(explorador.SelectedPath, "*"+nombreLog+"*.*");
-            foreach (string archivo in archivos)
-            {
-                archivosLogs.Add(archivo);
-            }
-        }
-
-        private void aceptarLog_Click(object sender, EventArgs e)
-        {
-            obtenerLogs();
-            //textoArchivo.Text = File.ReadAllText(explorador.SelectedPath);
-            textoArchivo.Show();
-            textoArchivo.BringToFront();
-        }
-
-        private void extraerOperaciones()
-        {
-
+            Process.Start(@"C:\Incigest\Utilidades\AnalizaLog.exe");
         }
     }
 }
