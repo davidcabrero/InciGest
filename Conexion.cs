@@ -88,12 +88,50 @@ namespace InciGest
             }
         }
 
-        public DataTable getDatosPorAplicacion() //Datos de las aplicaciones a las que se les da soporte
+        public Boolean getEliminarInci(int codInci) //Marcar una inci como resuelta
         {
             try
             {
                 conexion.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM aplicaciones", conexion);
+                MySqlCommand consulta = new MySqlCommand("DELETE * FROM incidencias WHERE id_incidencia = @codInci", conexion);
+                consulta.Parameters.AddWithValue("@codInci", codInci);
+                consulta.ExecuteNonQuery();
+
+                conexion.Close();
+                return true;
+            }
+            catch (MySqlException e)
+            {
+                return false;
+            }
+        }
+
+        public Boolean getActualizarNumInci(int numInci, String nombreApp) //Actualiza número de incis.
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("UPDATE aplicaciones SET incidencias = @numInci where nombre = @nombreApp", conexion);
+                consulta.Parameters.AddWithValue("@numInci", numInci);
+                consulta.Parameters.AddWithValue("@nombreApp", nombreApp);
+                consulta.ExecuteNonQuery();
+
+                conexion.Close();
+                return true;
+            }
+            catch (MySqlException e)
+            {
+                return false;
+            }
+        }
+
+        public DataTable getDatosPorAplicacion(String nombreApp) //Datos de las aplicaciones a las que se les da soporte
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM aplicaciones WHERE nombre = @nombreApp", conexion);
+                consulta.Parameters.AddWithValue("@nombreApp", nombreApp);
                 MySqlDataReader resultado = consulta.ExecuteReader();
                 DataTable datos = new DataTable();
                 datos.Load(resultado);

@@ -130,6 +130,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="VentanaAgregarUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaAgregarUser.Designer.cs">
+      <DependentUpon>VentanaAgregarUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaCrearInci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaCrearInci.Designer.cs">
+      <DependentUpon>VentanaCrearInci.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaLogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +156,12 @@
     <Compile Include="VentanaPrincipal.Designer.cs">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VentanaAgregarUser.resx">
+      <DependentUpon>VentanaAgregarUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaCrearInci.resx">
+      <DependentUpon>VentanaCrearInci.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanaLogIn.resx">
       <DependentUpon>VentanaLogIn.cs</DependentUpon>
     </EmbeddedResource>

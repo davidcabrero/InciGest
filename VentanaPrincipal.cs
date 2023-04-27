@@ -34,8 +34,6 @@ namespace InciGest
             panelIncidencia.Hide();
             panelEditarPerfil.Hide();
             perfilUuario.LabelText = user;
-            panelCrearInci.Hide();
-            panelRegistroUsuario.Hide();
             textoArchivo.Hide();
         }
 
@@ -101,8 +99,8 @@ namespace InciGest
                 aplicacion.Text = incidencias.Rows[0]["aplicacion"].ToString();
                 prioridad.Text = incidencias.Rows[0]["prioridad"].ToString();
                 fechaInci.Text = incidencias.Rows[0]["fecha"].ToString();
-                idInci.Text = incidencias.Rows[0]["id_incidencia"].ToString();
-                userAsignado.Text = incidencias.Rows[0]["dni_usuarioAsignado"].ToString();
+                idInci.Text = "Código: " + incidencias.Rows[0]["id_incidencia"].ToString();
+                userAsignado.Text = "Usuario: " + incidencias.Rows[0]["dni_usuarioAsignado"].ToString();
             }
         }
 
@@ -246,35 +244,10 @@ namespace InciGest
             perfilEditado.LabelText = user;
         }
 
-        private void crearIncidencia()
-        {
-            panelCrearInci.Show();
-            panelRegistroUsuario.BringToFront();
-            if (conexion.insertaIncidencia(tituloText.Text, eligePrioridad.SelectedItem.ToString(), ipText.Text, eligeGrupo.SelectedItem.ToString(), eligeAplicacion.SelectedItem.ToString(), descripcionText.Text, user))
-            {
-                MessageBox.Show("Incidencia Añadida"); //Se añade la inci
-                panelCrearInci.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Error"); //Fallo
-            }
-        }
-
         private void botonCrearInci_Click(object sender, EventArgs e)
         {
-            panelCrearInci.Show();
-            panelCrearInci.BringToFront();
-        }
-
-        private void botonCancelar_Click(object sender, EventArgs e)
-        {
-            panelCrearInci.Hide();
-        }
-
-        private void botonCrear_Click(object sender, EventArgs e)
-        {
-            crearIncidencia();
+            VentanaCrearInci v1 = new VentanaCrearInci();
+            v1.Show();
         }
 
         private void botonEditarUsuarios_Click(object sender, EventArgs e)
@@ -294,56 +267,8 @@ namespace InciGest
 
         private void botonRegistroUsuario_Click(object sender, EventArgs e)
         {
-            panelRegistroUsuario.Show();
-            panelRegistroUsuario.BringToFront();
-        }
-
-        private void CancelarNewUser_Click(object sender, EventArgs e)
-        {
-            panelRegistroUsuario.Hide();
-        }
-
-        private void GuardarNewUser_Click(object sender, EventArgs e)
-        {
-            incidencias = conexion.comprobarRegistro();
-
-            int perfil = 0;
-            if (perfilNuevo.SelectedItem.ToString().Equals("Desarrollador"))
-            {
-                perfil = 1;
-            }
-            else
-            {
-                MessageBox.Show("Complete todos los campos");
-            }
-            if (perfilNuevo.SelectedItem.ToString().Equals("Administrador"))
-            {
-                perfil = 2;
-            }
-            else
-            {
-                MessageBox.Show("Complete todos los campos");
-            }
-
-            String textoPassword = editPassword.Text;
-            string myHash = BCrypt.Net.BCrypt.HashPassword(textoPassword, BCrypt.Net.BCrypt.GenerateSalt());
-
-            if ((!emailNuevo.Text.Equals(incidencias.Rows[0]["email"].ToString())) || (!dniNuevo.Text.Equals(incidencias.Rows[0]["DNI"].ToString()))) //Siempre que el email y el dni no estén cogidos ya.
-            {
-                if (conexion.insertaUsuario(nombreNuevo.Text, perfil, apellidoNuevo.Text, dniNuevo.Text, emailNuevo.Text, myHash))
-                {
-                    MessageBox.Show("Usuario Registrado"); //Se añade el usuario
-                    panelRegistroUsuario.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Error"); //Fallo
-                }
-            }
-            else
-            {
-                MessageBox.Show("El email o DNI introducido ya se encuentra registrado. Intruce otro");
-            }
+            VentanaAgregarUser v1 = new VentanaAgregarUser();
+            v1.Show();
         }
 
         private void botonAsignar_Click(object sender, EventArgs e)
@@ -363,6 +288,44 @@ namespace InciGest
         private void abrirAnalizador_Click(object sender, EventArgs e)
         {
             Process.Start(@"C:\Incigest\Utilidades\AnalizaLog.exe");
+        }
+
+        private void botonBuscar_Click(object sender, EventArgs e)
+        {
+            if (tablaIncidencias.SelectedRows.Count > 0) 
+            {
+                tablaIncidencias.ClearSelection();
+            }
+
+            for (int i = 0; i < tablaIncidencias.RowCount; i++)
+            {
+                if (tablaIncidencias.Rows[i].Cells[1].Value.ToString().Contains(textoBusqueda.Text))
+                {
+                    tablaIncidencias.Rows[i].Selected = true;
+                }
+            }
+            if (tablaIncidencias.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("No se han encontrado resultados");
+            }
+        }
+
+        private void botonEstado_Click(object sender, EventArgs e)
+        {
+            int codInci = Int32.Parse(idInci.Text);
+            if (conexion.getEliminarInci(codInci))
+            {
+                MessageBox.Show("Incidencia Resuelta"); //Se resuelve la inci
+                grupoLabel.Show();
+                panelIncidencia.Hide();
+
+                elegirGrupo.Show();
+                tablaIncidencias.Show();
+            }
+            else
+            {
+                MessageBox.Show("Error"); //Fallo
+            }
         }
     }
 }
