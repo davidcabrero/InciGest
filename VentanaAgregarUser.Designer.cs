@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaAgregarUser));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -59,7 +58,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.GuardarNewUser = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.CancelarNewUser = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.perfilNuevo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.passwordNuevo = new Bunifu.UI.WinForms.BunifuTextBox();
             this.emailNuevo = new Bunifu.UI.WinForms.BunifuTextBox();
@@ -78,7 +76,6 @@
             this.panelRegistroUsuario.Controls.Add(this.label9);
             this.panelRegistroUsuario.Controls.Add(this.label8);
             this.panelRegistroUsuario.Controls.Add(this.GuardarNewUser);
-            this.panelRegistroUsuario.Controls.Add(this.CancelarNewUser);
             this.panelRegistroUsuario.Controls.Add(this.perfilNuevo);
             this.panelRegistroUsuario.Controls.Add(this.passwordNuevo);
             this.panelRegistroUsuario.Controls.Add(this.emailNuevo);
@@ -197,7 +194,7 @@
             this.GuardarNewUser.IdleIconLeftImage = null;
             this.GuardarNewUser.IdleIconRightImage = null;
             this.GuardarNewUser.IndicateFocus = false;
-            this.GuardarNewUser.Location = new System.Drawing.Point(424, 408);
+            this.GuardarNewUser.Location = new System.Drawing.Point(292, 414);
             this.GuardarNewUser.Name = "GuardarNewUser";
             this.GuardarNewUser.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.GuardarNewUser.OnDisabledState.BorderRadius = 1;
@@ -231,7 +228,7 @@
             this.GuardarNewUser.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.GuardarNewUser.OnPressedState.IconLeftImage = null;
             this.GuardarNewUser.OnPressedState.IconRightImage = null;
-            this.GuardarNewUser.Size = new System.Drawing.Size(150, 39);
+            this.GuardarNewUser.Size = new System.Drawing.Size(221, 39);
             this.GuardarNewUser.TabIndex = 37;
             this.GuardarNewUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.GuardarNewUser.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -239,96 +236,6 @@
             this.GuardarNewUser.TextPadding = new System.Windows.Forms.Padding(0);
             this.GuardarNewUser.UseDefaultRadiusAndThickness = true;
             this.GuardarNewUser.Click += new System.EventHandler(this.GuardarNewUser_Click);
-            // 
-            // CancelarNewUser
-            // 
-            this.CancelarNewUser.AllowAnimations = true;
-            this.CancelarNewUser.AllowMouseEffects = true;
-            this.CancelarNewUser.AllowToggling = false;
-            this.CancelarNewUser.AnimationSpeed = 200;
-            this.CancelarNewUser.AutoGenerateColors = false;
-            this.CancelarNewUser.AutoRoundBorders = true;
-            this.CancelarNewUser.AutoSizeLeftIcon = true;
-            this.CancelarNewUser.AutoSizeRightIcon = true;
-            this.CancelarNewUser.BackColor = System.Drawing.Color.Transparent;
-            this.CancelarNewUser.BackColor1 = System.Drawing.Color.DodgerBlue;
-            this.CancelarNewUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CancelarNewUser.BackgroundImage")));
-            this.CancelarNewUser.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.CancelarNewUser.ButtonText = "Cancelar";
-            this.CancelarNewUser.ButtonTextMarginLeft = 0;
-            this.CancelarNewUser.ColorContrastOnClick = 45;
-            this.CancelarNewUser.ColorContrastOnHover = 45;
-            this.CancelarNewUser.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.CancelarNewUser.CustomizableEdges = borderEdges2;
-            this.CancelarNewUser.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.CancelarNewUser.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.CancelarNewUser.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.CancelarNewUser.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.CancelarNewUser.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.CancelarNewUser.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.CancelarNewUser.ForeColor = System.Drawing.Color.White;
-            this.CancelarNewUser.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CancelarNewUser.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.CancelarNewUser.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.CancelarNewUser.IconMarginLeft = 11;
-            this.CancelarNewUser.IconPadding = 10;
-            this.CancelarNewUser.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.CancelarNewUser.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.CancelarNewUser.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.CancelarNewUser.IconSize = 25;
-            this.CancelarNewUser.IdleBorderColor = System.Drawing.Color.DodgerBlue;
-            this.CancelarNewUser.IdleBorderRadius = 37;
-            this.CancelarNewUser.IdleBorderThickness = 1;
-            this.CancelarNewUser.IdleFillColor = System.Drawing.Color.DodgerBlue;
-            this.CancelarNewUser.IdleIconLeftImage = null;
-            this.CancelarNewUser.IdleIconRightImage = null;
-            this.CancelarNewUser.IndicateFocus = false;
-            this.CancelarNewUser.Location = new System.Drawing.Point(227, 408);
-            this.CancelarNewUser.Name = "CancelarNewUser";
-            this.CancelarNewUser.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.CancelarNewUser.OnDisabledState.BorderRadius = 1;
-            this.CancelarNewUser.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.CancelarNewUser.OnDisabledState.BorderThickness = 1;
-            this.CancelarNewUser.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.CancelarNewUser.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.CancelarNewUser.OnDisabledState.IconLeftImage = null;
-            this.CancelarNewUser.OnDisabledState.IconRightImage = null;
-            this.CancelarNewUser.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.CancelarNewUser.onHoverState.BorderRadius = 1;
-            this.CancelarNewUser.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.CancelarNewUser.onHoverState.BorderThickness = 1;
-            this.CancelarNewUser.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.CancelarNewUser.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.CancelarNewUser.onHoverState.IconLeftImage = null;
-            this.CancelarNewUser.onHoverState.IconRightImage = null;
-            this.CancelarNewUser.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.CancelarNewUser.OnIdleState.BorderRadius = 1;
-            this.CancelarNewUser.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.CancelarNewUser.OnIdleState.BorderThickness = 1;
-            this.CancelarNewUser.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.CancelarNewUser.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.CancelarNewUser.OnIdleState.IconLeftImage = null;
-            this.CancelarNewUser.OnIdleState.IconRightImage = null;
-            this.CancelarNewUser.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.CancelarNewUser.OnPressedState.BorderRadius = 1;
-            this.CancelarNewUser.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.CancelarNewUser.OnPressedState.BorderThickness = 1;
-            this.CancelarNewUser.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.CancelarNewUser.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.CancelarNewUser.OnPressedState.IconLeftImage = null;
-            this.CancelarNewUser.OnPressedState.IconRightImage = null;
-            this.CancelarNewUser.Size = new System.Drawing.Size(150, 39);
-            this.CancelarNewUser.TabIndex = 36;
-            this.CancelarNewUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.CancelarNewUser.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.CancelarNewUser.TextMarginLeft = 0;
-            this.CancelarNewUser.TextPadding = new System.Windows.Forms.Padding(0);
-            this.CancelarNewUser.UseDefaultRadiusAndThickness = true;
-            this.CancelarNewUser.Click += new System.EventHandler(this.CancelarNewUser_Click);
             // 
             // perfilNuevo
             // 
@@ -742,7 +649,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton GuardarNewUser;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton CancelarNewUser;
         private Guna.UI2.WinForms.Guna2ComboBox perfilNuevo;
         private Bunifu.UI.WinForms.BunifuTextBox passwordNuevo;
         private Bunifu.UI.WinForms.BunifuTextBox emailNuevo;

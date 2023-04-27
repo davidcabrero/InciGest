@@ -35,6 +35,7 @@ namespace InciGest
             panelEditarPerfil.Hide();
             perfilUuario.LabelText = user;
             textoArchivo.Hide();
+            verEstadisticas();
         }
 
         public void establecerPerfil()
@@ -250,19 +251,32 @@ namespace InciGest
             v1.Show();
         }
 
-        private void botonEditarUsuarios_Click(object sender, EventArgs e)
+        private void verEstadisticas()
         {
+            //Incidencias Totales
+            incidencias = conexion.getDatosPorAplicacion("Terminal Financiero");
+            perfil = conexion.getDatosPorAplicacion("TPV");
+            string StrNumInciTF = incidencias.Rows[0]["incidencias"].ToString();
+            string StrNumInciTPV = perfil.Rows[0]["incidencias"].ToString();
+            int numInciTF = Int32.Parse(StrNumInciTF); //TF
+            int numInciTPV = Int32.Parse(StrNumInciTPV); //TPV
+            int numInciTot = numInciTF + numInciTPV; //TOTAL
+            //Incidencias Sin Resolver
+            incidencias = conexion.getDatosPorGrupo("Terminal Financiero");
+            int numSrTF = incidencias.Rows.Count; //TF
+            incidencias = conexion.getDatosPorGrupo("TPV");
+            int numSrTPV = incidencias.Rows.Count; //TPV
+            int numInciSR = numSrTF + numSrTPV; //TOTAL
+            //Incidencias Resueltas
+            int numInciReTF = numInciTF - numSrTF; //TF
+            int numInciReTPV = numInciTPV - numSrTPV; //TPV
+            int numInciRe = numInciReTF + numInciReTPV; //TOTAL
 
-        }
+            label3.Text = "Incidencias Sin Resolver: " + numInciSR;
+            label4.Text = "Incidencias Resueltas: " + numInciRe;
+            label5.Text = "Total: " + numInciTot;
 
-        private void botonAdministrarInci_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void botonVerEstadisticas_Click(object sender, EventArgs e)
-        {
-
+            graficoInci.Value = numInciSR;
         }
 
         private void botonRegistroUsuario_Click(object sender, EventArgs e)
@@ -326,6 +340,11 @@ namespace InciGest
             {
                 MessageBox.Show("Error"); //Fallo
             }
+        }
+
+        private void verUsers_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

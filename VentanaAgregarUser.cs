@@ -64,11 +64,5 @@ namespace InciGest
                 MessageBox.Show("El email o DNI introducido ya se encuentra registrado. Intruce otro");
             }
         }
-
-        private void CancelarNewUser_Click(object sender, EventArgs e)
-        {
-            VentanaAgregarUser v1 = new VentanaAgregarUser();
-            v1.Hide();
-        }
     }
 }

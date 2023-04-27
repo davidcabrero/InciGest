@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaCrearInci));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -45,7 +44,6 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.panelCrearInci = new System.Windows.Forms.Panel();
             this.botonCrear = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.botonCancelar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -64,7 +62,6 @@
             // panelCrearInci
             // 
             this.panelCrearInci.Controls.Add(this.botonCrear);
-            this.panelCrearInci.Controls.Add(this.botonCancelar);
             this.panelCrearInci.Controls.Add(this.label7);
             this.panelCrearInci.Controls.Add(this.label6);
             this.panelCrearInci.Controls.Add(this.label5);
@@ -129,7 +126,7 @@
             this.botonCrear.IdleIconLeftImage = null;
             this.botonCrear.IdleIconRightImage = null;
             this.botonCrear.IndicateFocus = false;
-            this.botonCrear.Location = new System.Drawing.Point(583, 456);
+            this.botonCrear.Location = new System.Drawing.Point(300, 457);
             this.botonCrear.Name = "botonCrear";
             this.botonCrear.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.botonCrear.OnDisabledState.BorderRadius = 20;
@@ -163,7 +160,7 @@
             this.botonCrear.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.botonCrear.OnPressedState.IconLeftImage = null;
             this.botonCrear.OnPressedState.IconRightImage = null;
-            this.botonCrear.Size = new System.Drawing.Size(137, 39);
+            this.botonCrear.Size = new System.Drawing.Size(207, 39);
             this.botonCrear.TabIndex = 10;
             this.botonCrear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.botonCrear.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -171,96 +168,6 @@
             this.botonCrear.TextPadding = new System.Windows.Forms.Padding(0);
             this.botonCrear.UseDefaultRadiusAndThickness = true;
             this.botonCrear.Click += new System.EventHandler(this.botonCrear_Click);
-            // 
-            // botonCancelar
-            // 
-            this.botonCancelar.AllowAnimations = true;
-            this.botonCancelar.AllowMouseEffects = true;
-            this.botonCancelar.AllowToggling = false;
-            this.botonCancelar.AnimationSpeed = 200;
-            this.botonCancelar.AutoGenerateColors = false;
-            this.botonCancelar.AutoRoundBorders = false;
-            this.botonCancelar.AutoSizeLeftIcon = true;
-            this.botonCancelar.AutoSizeRightIcon = true;
-            this.botonCancelar.BackColor = System.Drawing.Color.Transparent;
-            this.botonCancelar.BackColor1 = System.Drawing.Color.DodgerBlue;
-            this.botonCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botonCancelar.BackgroundImage")));
-            this.botonCancelar.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.botonCancelar.ButtonText = "Cancelar";
-            this.botonCancelar.ButtonTextMarginLeft = 0;
-            this.botonCancelar.ColorContrastOnClick = 45;
-            this.botonCancelar.ColorContrastOnHover = 45;
-            this.botonCancelar.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.botonCancelar.CustomizableEdges = borderEdges2;
-            this.botonCancelar.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.botonCancelar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.botonCancelar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.botonCancelar.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.botonCancelar.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.botonCancelar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.botonCancelar.ForeColor = System.Drawing.Color.White;
-            this.botonCancelar.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonCancelar.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.botonCancelar.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.botonCancelar.IconMarginLeft = 11;
-            this.botonCancelar.IconPadding = 10;
-            this.botonCancelar.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.botonCancelar.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.botonCancelar.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.botonCancelar.IconSize = 25;
-            this.botonCancelar.IdleBorderColor = System.Drawing.Color.DodgerBlue;
-            this.botonCancelar.IdleBorderRadius = 20;
-            this.botonCancelar.IdleBorderThickness = 1;
-            this.botonCancelar.IdleFillColor = System.Drawing.Color.DodgerBlue;
-            this.botonCancelar.IdleIconLeftImage = null;
-            this.botonCancelar.IdleIconRightImage = null;
-            this.botonCancelar.IndicateFocus = false;
-            this.botonCancelar.Location = new System.Drawing.Point(427, 456);
-            this.botonCancelar.Name = "botonCancelar";
-            this.botonCancelar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.botonCancelar.OnDisabledState.BorderRadius = 20;
-            this.botonCancelar.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.botonCancelar.OnDisabledState.BorderThickness = 1;
-            this.botonCancelar.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.botonCancelar.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.botonCancelar.OnDisabledState.IconLeftImage = null;
-            this.botonCancelar.OnDisabledState.IconRightImage = null;
-            this.botonCancelar.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.botonCancelar.onHoverState.BorderRadius = 20;
-            this.botonCancelar.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.botonCancelar.onHoverState.BorderThickness = 1;
-            this.botonCancelar.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.botonCancelar.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.botonCancelar.onHoverState.IconLeftImage = null;
-            this.botonCancelar.onHoverState.IconRightImage = null;
-            this.botonCancelar.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.botonCancelar.OnIdleState.BorderRadius = 20;
-            this.botonCancelar.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.botonCancelar.OnIdleState.BorderThickness = 1;
-            this.botonCancelar.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.botonCancelar.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.botonCancelar.OnIdleState.IconLeftImage = null;
-            this.botonCancelar.OnIdleState.IconRightImage = null;
-            this.botonCancelar.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.botonCancelar.OnPressedState.BorderRadius = 20;
-            this.botonCancelar.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.botonCancelar.OnPressedState.BorderThickness = 1;
-            this.botonCancelar.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.botonCancelar.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.botonCancelar.OnPressedState.IconLeftImage = null;
-            this.botonCancelar.OnPressedState.IconRightImage = null;
-            this.botonCancelar.Size = new System.Drawing.Size(137, 39);
-            this.botonCancelar.TabIndex = 9;
-            this.botonCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.botonCancelar.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.botonCancelar.TextMarginLeft = 0;
-            this.botonCancelar.TextPadding = new System.Windows.Forms.Padding(0);
-            this.botonCancelar.UseDefaultRadiusAndThickness = true;
-            this.botonCancelar.Click += new System.EventHandler(this.botonCancelar_Click);
             // 
             // label7
             // 
@@ -622,7 +529,6 @@
 
         private System.Windows.Forms.Panel panelCrearInci;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton botonCrear;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton botonCancelar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

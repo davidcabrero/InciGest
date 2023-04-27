@@ -52,11 +52,5 @@ namespace InciGest
             crearIncidencia();
             sumarIncidencia();
         }
-
-        private void botonCancelar_Click(object sender, EventArgs e)
-        {
-            VentanaCrearInci v1 = new VentanaCrearInci();
-            v1.Hide();
-        }
     }
 }
