@@ -462,5 +462,54 @@ namespace InciGest
                 }
             }
         }
+
+        private void generarInforme_Click(object sender, EventArgs e)
+        {
+            string path = @"C:\Incigest\Descargas\informeIncidencias.txt";
+            File.Delete(path);
+            if (!File.Exists(path))
+            {
+                //Incidencias Totales
+                incidencias = conexion.getDatosPorAplicacion("Terminal Financiero");
+                perfil = conexion.getDatosPorAplicacion("TPV");
+                string StrNumInciTF = incidencias.Rows[0]["incidencias"].ToString();
+                string StrNumInciTPV = perfil.Rows[0]["incidencias"].ToString();
+                int numInciTF = Int32.Parse(StrNumInciTF); //TF
+                int numInciTPV = Int32.Parse(StrNumInciTPV); //TPV
+                int numInciTot = numInciTF + numInciTPV; //TOTAL
+                //Incidencias Sin Resolver
+                incidencias = conexion.getDatosPorGrupo("Terminal Financiero");
+                int numSrTF = incidencias.Rows.Count; //TF
+                incidencias = conexion.getDatosPorGrupo("TPV");
+                int numSrTPV = incidencias.Rows.Count; //TPV
+                int numInciSR = numSrTF + numSrTPV; //TOTAL
+                //Incidencias Resueltas
+                int numInciReTF = numInciTF - numSrTF; //TF
+                int numInciReTPV = numInciTPV - numSrTPV; //TPV
+                int numInciRe = numInciReTF + numInciReTPV; //TOTAL
+
+                label3.Text = "Incidencias Sin Resolver: " + numInciSR;
+                label4.Text = "Incidencias Resueltas: " + numInciRe;
+                label5.Text = "Total: " + numInciTot;
+
+                // Crea el fichero
+                using (StreamWriter sw = File.CreateText(path))
+                {
+                    sw.WriteLine("Incidencias Sin Resolver: " + numInciSR);
+                    sw.WriteLine("Incidencias Resueltas: " + numInciRe);
+                    sw.WriteLine("Total: " + numInciTot);
+                    sw.WriteLine("");
+                    sw.WriteLine("Incidencias Sin Resolver TF: " + numSrTF);
+                    sw.WriteLine("Incidencias Resueltas TF: " + numInciReTF);
+                    sw.WriteLine("Incidencias Totales TF: " + numInciTF);
+                    sw.WriteLine("");
+                    sw.WriteLine("Incidencias Sin Resolver TPV: " + numSrTPV);
+                    sw.WriteLine("Incidencias Resueltas TPV: " + numInciReTPV);
+                    sw.WriteLine("Incidencias Totales TPV: " + numInciTPV);
+                }
+
+                MessageBox.Show("Informe generado en la ruta C:\\Incigest\\Descargas");
+            }
+        }
     }
 }

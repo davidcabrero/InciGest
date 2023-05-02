@@ -41,13 +41,13 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -60,18 +60,19 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges9 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges10 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges11 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges12 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges13 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges14 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges14 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges15 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges16 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges17 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.menuPrincipal = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panelIncidencia = new Bunifu.UI.WinForms.BunifuPanel();
@@ -138,6 +139,7 @@
             this.explorador = new System.Windows.Forms.FolderBrowserDialog();
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.generarInforme = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.menuPrincipal.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panelIncidencia.SuspendLayout();
@@ -854,6 +856,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.generarInforme);
             this.tabPage3.Controls.Add(this.abrirAnalizador);
             this.tabPage3.Location = new System.Drawing.Point(154, 4);
             this.tabPage3.Name = "tabPage3";
@@ -881,11 +884,11 @@
             this.abrirAnalizador.ColorContrastOnClick = 45;
             this.abrirAnalizador.ColorContrastOnHover = 45;
             this.abrirAnalizador.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.abrirAnalizador.CustomizableEdges = borderEdges5;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.abrirAnalizador.CustomizableEdges = borderEdges6;
             this.abrirAnalizador.DialogResult = System.Windows.Forms.DialogResult.None;
             this.abrirAnalizador.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.abrirAnalizador.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1155,11 +1158,11 @@
             this.botonCancelarEdicion.ColorContrastOnClick = 45;
             this.botonCancelarEdicion.ColorContrastOnHover = 45;
             this.botonCancelarEdicion.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges6.BottomLeft = true;
-            borderEdges6.BottomRight = true;
-            borderEdges6.TopLeft = true;
-            borderEdges6.TopRight = true;
-            this.botonCancelarEdicion.CustomizableEdges = borderEdges6;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.botonCancelarEdicion.CustomizableEdges = borderEdges7;
             this.botonCancelarEdicion.DialogResult = System.Windows.Forms.DialogResult.None;
             this.botonCancelarEdicion.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.botonCancelarEdicion.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1245,11 +1248,11 @@
             this.botonGuardarPerfil.ColorContrastOnClick = 45;
             this.botonGuardarPerfil.ColorContrastOnHover = 45;
             this.botonGuardarPerfil.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges7.BottomLeft = true;
-            borderEdges7.BottomRight = true;
-            borderEdges7.TopLeft = true;
-            borderEdges7.TopRight = true;
-            this.botonGuardarPerfil.CustomizableEdges = borderEdges7;
+            borderEdges8.BottomLeft = true;
+            borderEdges8.BottomRight = true;
+            borderEdges8.TopLeft = true;
+            borderEdges8.TopRight = true;
+            this.botonGuardarPerfil.CustomizableEdges = borderEdges8;
             this.botonGuardarPerfil.DialogResult = System.Windows.Forms.DialogResult.None;
             this.botonGuardarPerfil.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.botonGuardarPerfil.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1569,11 +1572,11 @@
             this.botonCambiarPassword.ColorContrastOnClick = 45;
             this.botonCambiarPassword.ColorContrastOnHover = 45;
             this.botonCambiarPassword.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges8.BottomLeft = true;
-            borderEdges8.BottomRight = true;
-            borderEdges8.TopLeft = true;
-            borderEdges8.TopRight = true;
-            this.botonCambiarPassword.CustomizableEdges = borderEdges8;
+            borderEdges9.BottomLeft = true;
+            borderEdges9.BottomRight = true;
+            borderEdges9.TopLeft = true;
+            borderEdges9.TopRight = true;
+            this.botonCambiarPassword.CustomizableEdges = borderEdges9;
             this.botonCambiarPassword.DialogResult = System.Windows.Forms.DialogResult.None;
             this.botonCambiarPassword.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.botonCambiarPassword.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1659,11 +1662,11 @@
             this.botonEditarPerfil.ColorContrastOnClick = 45;
             this.botonEditarPerfil.ColorContrastOnHover = 45;
             this.botonEditarPerfil.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges9.BottomLeft = true;
-            borderEdges9.BottomRight = true;
-            borderEdges9.TopLeft = true;
-            borderEdges9.TopRight = true;
-            this.botonEditarPerfil.CustomizableEdges = borderEdges9;
+            borderEdges10.BottomLeft = true;
+            borderEdges10.BottomRight = true;
+            borderEdges10.TopLeft = true;
+            borderEdges10.TopRight = true;
+            this.botonEditarPerfil.CustomizableEdges = borderEdges10;
             this.botonEditarPerfil.DialogResult = System.Windows.Forms.DialogResult.None;
             this.botonEditarPerfil.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.botonEditarPerfil.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1830,11 +1833,11 @@
             this.botonVolverAdmin.ColorContrastOnClick = 45;
             this.botonVolverAdmin.ColorContrastOnHover = 45;
             this.botonVolverAdmin.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges10.BottomLeft = true;
-            borderEdges10.BottomRight = true;
-            borderEdges10.TopLeft = true;
-            borderEdges10.TopRight = true;
-            this.botonVolverAdmin.CustomizableEdges = borderEdges10;
+            borderEdges11.BottomLeft = true;
+            borderEdges11.BottomRight = true;
+            borderEdges11.TopLeft = true;
+            borderEdges11.TopRight = true;
+            this.botonVolverAdmin.CustomizableEdges = borderEdges11;
             this.botonVolverAdmin.DialogResult = System.Windows.Forms.DialogResult.None;
             this.botonVolverAdmin.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.botonVolverAdmin.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1920,11 +1923,11 @@
             this.botonEnviarMensaje.ColorContrastOnClick = 45;
             this.botonEnviarMensaje.ColorContrastOnHover = 45;
             this.botonEnviarMensaje.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges11.BottomLeft = true;
-            borderEdges11.BottomRight = true;
-            borderEdges11.TopLeft = true;
-            borderEdges11.TopRight = true;
-            this.botonEnviarMensaje.CustomizableEdges = borderEdges11;
+            borderEdges12.BottomLeft = true;
+            borderEdges12.BottomRight = true;
+            borderEdges12.TopLeft = true;
+            borderEdges12.TopRight = true;
+            this.botonEnviarMensaje.CustomizableEdges = borderEdges12;
             this.botonEnviarMensaje.DialogResult = System.Windows.Forms.DialogResult.None;
             this.botonEnviarMensaje.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.botonEnviarMensaje.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -2010,11 +2013,11 @@
             this.botonEliminarUser.ColorContrastOnClick = 45;
             this.botonEliminarUser.ColorContrastOnHover = 45;
             this.botonEliminarUser.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges12.BottomLeft = true;
-            borderEdges12.BottomRight = true;
-            borderEdges12.TopLeft = true;
-            borderEdges12.TopRight = true;
-            this.botonEliminarUser.CustomizableEdges = borderEdges12;
+            borderEdges13.BottomLeft = true;
+            borderEdges13.BottomRight = true;
+            borderEdges13.TopLeft = true;
+            borderEdges13.TopRight = true;
+            this.botonEliminarUser.CustomizableEdges = borderEdges13;
             this.botonEliminarUser.DialogResult = System.Windows.Forms.DialogResult.None;
             this.botonEliminarUser.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.botonEliminarUser.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -2100,11 +2103,11 @@
             this.botonEditar.ColorContrastOnClick = 45;
             this.botonEditar.ColorContrastOnHover = 45;
             this.botonEditar.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges13.BottomLeft = true;
-            borderEdges13.BottomRight = true;
-            borderEdges13.TopLeft = true;
-            borderEdges13.TopRight = true;
-            this.botonEditar.CustomizableEdges = borderEdges13;
+            borderEdges14.BottomLeft = true;
+            borderEdges14.BottomRight = true;
+            borderEdges14.TopLeft = true;
+            borderEdges14.TopRight = true;
+            this.botonEditar.CustomizableEdges = borderEdges14;
             this.botonEditar.DialogResult = System.Windows.Forms.DialogResult.None;
             this.botonEditar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.botonEditar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -2173,6 +2176,8 @@
             // 
             // tablaUsuarios
             // 
+            this.tablaUsuarios.AllowUserToAddRows = false;
+            this.tablaUsuarios.AllowUserToDeleteRows = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             this.tablaUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -2201,6 +2206,7 @@
             this.tablaUsuarios.Location = new System.Drawing.Point(0, 0);
             this.tablaUsuarios.MultiSelect = false;
             this.tablaUsuarios.Name = "tablaUsuarios";
+            this.tablaUsuarios.ReadOnly = true;
             this.tablaUsuarios.RowHeadersVisible = false;
             this.tablaUsuarios.RowHeadersWidth = 51;
             this.tablaUsuarios.Size = new System.Drawing.Size(859, 431);
@@ -2218,7 +2224,7 @@
             this.tablaUsuarios.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.tablaUsuarios.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.tablaUsuarios.ThemeStyle.HeaderStyle.Height = 17;
-            this.tablaUsuarios.ThemeStyle.ReadOnly = false;
+            this.tablaUsuarios.ThemeStyle.ReadOnly = true;
             this.tablaUsuarios.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.tablaUsuarios.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.tablaUsuarios.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
@@ -2232,18 +2238,21 @@
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.MinimumWidth = 6;
             this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // Apellido
             // 
             this.Apellido.HeaderText = "Apellido";
             this.Apellido.MinimumWidth = 6;
             this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
             // 
             // Usuario
             // 
             this.Usuario.HeaderText = "Usuario";
             this.Usuario.MinimumWidth = 6;
             this.Usuario.Name = "Usuario";
+            this.Usuario.ReadOnly = true;
             // 
             // verUsers
             // 
@@ -2264,11 +2273,11 @@
             this.verUsers.ColorContrastOnClick = 45;
             this.verUsers.ColorContrastOnHover = 45;
             this.verUsers.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges14.BottomLeft = true;
-            borderEdges14.BottomRight = true;
-            borderEdges14.TopLeft = true;
-            borderEdges14.TopRight = true;
-            this.verUsers.CustomizableEdges = borderEdges14;
+            borderEdges15.BottomLeft = true;
+            borderEdges15.BottomRight = true;
+            borderEdges15.TopLeft = true;
+            borderEdges15.TopRight = true;
+            this.verUsers.CustomizableEdges = borderEdges15;
             this.verUsers.DialogResult = System.Windows.Forms.DialogResult.None;
             this.verUsers.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.verUsers.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -2419,11 +2428,11 @@
             this.botonRegistroUsuario.ColorContrastOnClick = 45;
             this.botonRegistroUsuario.ColorContrastOnHover = 45;
             this.botonRegistroUsuario.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges15.BottomLeft = true;
-            borderEdges15.BottomRight = true;
-            borderEdges15.TopLeft = true;
-            borderEdges15.TopRight = true;
-            this.botonRegistroUsuario.CustomizableEdges = borderEdges15;
+            borderEdges16.BottomLeft = true;
+            borderEdges16.BottomRight = true;
+            borderEdges16.TopLeft = true;
+            borderEdges16.TopRight = true;
+            this.botonRegistroUsuario.CustomizableEdges = borderEdges16;
             this.botonRegistroUsuario.DialogResult = System.Windows.Forms.DialogResult.None;
             this.botonRegistroUsuario.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.botonRegistroUsuario.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -2509,11 +2518,11 @@
             this.botonCrearInci.ColorContrastOnClick = 45;
             this.botonCrearInci.ColorContrastOnHover = 45;
             this.botonCrearInci.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges16.BottomLeft = true;
-            borderEdges16.BottomRight = true;
-            borderEdges16.TopLeft = true;
-            borderEdges16.TopRight = true;
-            this.botonCrearInci.CustomizableEdges = borderEdges16;
+            borderEdges17.BottomLeft = true;
+            borderEdges17.BottomRight = true;
+            borderEdges17.TopLeft = true;
+            borderEdges17.TopRight = true;
+            this.botonCrearInci.CustomizableEdges = borderEdges17;
             this.botonCrearInci.DialogResult = System.Windows.Forms.DialogResult.None;
             this.botonCrearInci.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.botonCrearInci.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -2597,6 +2606,96 @@
             this.elementHost1.TabIndex = 0;
             this.elementHost1.Text = "elementHost1";
             this.elementHost1.Child = null;
+            // 
+            // generarInforme
+            // 
+            this.generarInforme.AllowAnimations = true;
+            this.generarInforme.AllowMouseEffects = true;
+            this.generarInforme.AllowToggling = false;
+            this.generarInforme.AnimationSpeed = 200;
+            this.generarInforme.AutoGenerateColors = false;
+            this.generarInforme.AutoRoundBorders = true;
+            this.generarInforme.AutoSizeLeftIcon = true;
+            this.generarInforme.AutoSizeRightIcon = true;
+            this.generarInforme.BackColor = System.Drawing.Color.Transparent;
+            this.generarInforme.BackColor1 = System.Drawing.Color.DodgerBlue;
+            this.generarInforme.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("generarInforme.BackgroundImage")));
+            this.generarInforme.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.generarInforme.ButtonText = "Generar Informe";
+            this.generarInforme.ButtonTextMarginLeft = 0;
+            this.generarInforme.ColorContrastOnClick = 45;
+            this.generarInforme.ColorContrastOnHover = 45;
+            this.generarInforme.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.generarInforme.CustomizableEdges = borderEdges5;
+            this.generarInforme.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.generarInforme.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.generarInforme.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.generarInforme.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.generarInforme.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.generarInforme.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.generarInforme.ForeColor = System.Drawing.Color.White;
+            this.generarInforme.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.generarInforme.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.generarInforme.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.generarInforme.IconMarginLeft = 11;
+            this.generarInforme.IconPadding = 10;
+            this.generarInforme.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.generarInforme.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.generarInforme.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.generarInforme.IconSize = 25;
+            this.generarInforme.IdleBorderColor = System.Drawing.Color.DodgerBlue;
+            this.generarInforme.IdleBorderRadius = 87;
+            this.generarInforme.IdleBorderThickness = 1;
+            this.generarInforme.IdleFillColor = System.Drawing.Color.DodgerBlue;
+            this.generarInforme.IdleIconLeftImage = null;
+            this.generarInforme.IdleIconRightImage = null;
+            this.generarInforme.IndicateFocus = false;
+            this.generarInforme.Location = new System.Drawing.Point(279, 38);
+            this.generarInforme.Name = "generarInforme";
+            this.generarInforme.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.generarInforme.OnDisabledState.BorderRadius = 1;
+            this.generarInforme.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.generarInforme.OnDisabledState.BorderThickness = 1;
+            this.generarInforme.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.generarInforme.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.generarInforme.OnDisabledState.IconLeftImage = null;
+            this.generarInforme.OnDisabledState.IconRightImage = null;
+            this.generarInforme.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.generarInforme.onHoverState.BorderRadius = 1;
+            this.generarInforme.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.generarInforme.onHoverState.BorderThickness = 1;
+            this.generarInforme.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.generarInforme.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.generarInforme.onHoverState.IconLeftImage = null;
+            this.generarInforme.onHoverState.IconRightImage = null;
+            this.generarInforme.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.generarInforme.OnIdleState.BorderRadius = 1;
+            this.generarInforme.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.generarInforme.OnIdleState.BorderThickness = 1;
+            this.generarInforme.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.generarInforme.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.generarInforme.OnIdleState.IconLeftImage = null;
+            this.generarInforme.OnIdleState.IconRightImage = null;
+            this.generarInforme.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.generarInforme.OnPressedState.BorderRadius = 1;
+            this.generarInforme.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.generarInforme.OnPressedState.BorderThickness = 1;
+            this.generarInforme.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.generarInforme.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.generarInforme.OnPressedState.IconLeftImage = null;
+            this.generarInforme.OnPressedState.IconRightImage = null;
+            this.generarInforme.Size = new System.Drawing.Size(168, 89);
+            this.generarInforme.TabIndex = 12;
+            this.generarInforme.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.generarInforme.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.generarInforme.TextMarginLeft = 0;
+            this.generarInforme.TextPadding = new System.Windows.Forms.Padding(0);
+            this.generarInforme.UseDefaultRadiusAndThickness = true;
+            this.generarInforme.Click += new System.EventHandler(this.generarInforme_Click);
             // 
             // VentanaPrincipal
             // 
@@ -2695,5 +2794,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton botonVolverAdmin;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton generarInforme;
     }
 }
