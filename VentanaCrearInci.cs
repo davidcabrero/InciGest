@@ -15,6 +15,7 @@ namespace InciGest
         public VentanaCrearInci()
         {
             InitializeComponent();
+            MaximizeBox = false;
         }
 
         Conexion conexion = new Conexion();

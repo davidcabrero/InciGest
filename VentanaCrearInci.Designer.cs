@@ -76,7 +76,7 @@
             this.panelCrearInci.Controls.Add(this.tituloText);
             this.panelCrearInci.Location = new System.Drawing.Point(-5, 1);
             this.panelCrearInci.Name = "panelCrearInci";
-            this.panelCrearInci.Size = new System.Drawing.Size(810, 524);
+            this.panelCrearInci.Size = new System.Drawing.Size(862, 524);
             this.panelCrearInci.TabIndex = 9;
             // 
             // botonCrear
@@ -267,7 +267,7 @@
             "TPV"});
             this.eligeAplicacion.Location = new System.Drawing.Point(567, 171);
             this.eligeAplicacion.Name = "eligeAplicacion";
-            this.eligeAplicacion.Size = new System.Drawing.Size(157, 36);
+            this.eligeAplicacion.Size = new System.Drawing.Size(216, 36);
             this.eligeAplicacion.TabIndex = 4;
             // 
             // eligePrioridad
@@ -287,7 +287,7 @@
             "Alta"});
             this.eligePrioridad.Location = new System.Drawing.Point(567, 78);
             this.eligePrioridad.Name = "eligePrioridad";
-            this.eligePrioridad.Size = new System.Drawing.Size(157, 36);
+            this.eligePrioridad.Size = new System.Drawing.Size(216, 36);
             this.eligePrioridad.TabIndex = 3;
             // 
             // descripcionText
@@ -353,7 +353,7 @@
             this.descripcionText.SelectionLength = 0;
             this.descripcionText.SelectionStart = 0;
             this.descripcionText.ShortcutsEnabled = true;
-            this.descripcionText.Size = new System.Drawing.Size(635, 183);
+            this.descripcionText.Size = new System.Drawing.Size(698, 183);
             this.descripcionText.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.descripcionText.TabIndex = 2;
             this.descripcionText.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -516,7 +516,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 526);
+            this.ClientSize = new System.Drawing.Size(856, 526);
             this.Controls.Add(this.panelCrearInci);
             this.Name = "VentanaCrearInci";
             this.Text = "VentanaCrearInci";

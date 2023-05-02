@@ -241,6 +241,25 @@ namespace InciGest
             }
         }
 
+        public Boolean eliminaUser(String DNI) //Para eliminar el perfil de un usuario
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("DELETE * FROM usuario WHERE DNI = @DNI", conexion); //datos a introducir, se introducen los string en los campos de la bbdd.
+                consulta.Parameters.AddWithValue("@DNI", DNI);
+
+                consulta.ExecuteNonQuery();
+
+                conexion.Close();
+                return true;
+            }
+            catch (MySqlException e)
+            {
+                return false;
+            }
+        }
+
         public Boolean asignarInci(String usuarioAsignado, int codInci) //Para asignar una incidencia
         {
             try

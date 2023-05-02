@@ -29,6 +29,7 @@ namespace InciGest
         public VentanaPrincipal()
         {
             InitializeComponent();
+            MaximizeBox = false;
             establecerPerfil();
             elegirGrupo.SelectedIndex = 0;
             panelIncidencia.Hide();
@@ -306,7 +307,7 @@ namespace InciGest
 
         private void botonBuscar_Click(object sender, EventArgs e)
         {
-            if (tablaIncidencias.SelectedRows.Count > 0) 
+            if (tablaIncidencias.SelectedRows.Count > 0)
             {
                 tablaIncidencias.ClearSelection();
             }
@@ -371,6 +372,95 @@ namespace InciGest
         private void botonVolverAdmin_Click(object sender, EventArgs e)
         {
             panelVerUsers.Hide();
+        }
+
+        private void botonEliminarUser_Click(object sender, EventArgs e)
+        {
+            String usuarioEliminar = utils.GetValorCelda(tablaUsuarios, 2);
+
+            string message = "¿Está seguro de eliminar el usuario " + usuarioEliminar + "?";
+            string title = "Eliminar Usuario";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
+            {
+                if (conexion.eliminaUser(usuarioEliminar))
+                {
+                    MessageBox.Show("Usuario eliminado"); //Se elimina el usuario seleccionado
+                }
+                else
+                {
+                    MessageBox.Show("Error"); //Fallo
+                }
+            }
+            else
+            {
+
+            }
+        }
+
+        private void botonEditar_Click(object sender, EventArgs e) //Para editar perfil desarrollador o admin
+        {
+            String usuarioEdit = utils.GetValorCelda(tablaUsuarios, 2);
+
+            incidencias = conexion.getDatosPerfil(usuarioEdit);
+            String perfilUser = incidencias.Rows[0]["perfil"].ToString();
+
+            if (perfilUser == "1")
+            {
+                string message = "El usuario " + usuarioEdit + " tiene perfil de desarrollador ¿Desea hacerle admin?";
+                string title = "Eliminar Usuario";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+                if (result == DialogResult.Yes)
+                {
+                    if (conexion.eliminaUser(usuarioEdit))
+                    {
+                        MessageBox.Show("Perfil cambiado"); //Se elimina el usuario seleccionado
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error"); //Fallo
+                    }
+                }
+                else
+                {
+
+                }
+            }
+            if (perfilUser == "2")
+            {
+                string message = "El usuario " + usuarioEdit + " tiene perfil de administrador ¿Desea hacerle desarrollador?";
+                string title = "Eliminar Usuario";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+                if (result == DialogResult.Yes)
+                {
+                    if (conexion.eliminaUser(usuarioEdit))
+                    {
+                        if (user.Equals(usuarioEdit)) //Si el usuario cambiado es el mismo logeado
+                        {
+                            VentanaLogIn.usuario = "";
+                            this.Hide();
+                            VentanaLogIn vlog = new VentanaLogIn();
+                            vlog.Show();
+                            MessageBox.Show("Perfil cambiado, se cierra sesión");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Perfil cambiado"); //Se cambia el perfil del usuario seleccionado
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error"); //Fallo
+                    }
+                }
+                else
+                {
+
+                }
+            }
         }
     }
 }

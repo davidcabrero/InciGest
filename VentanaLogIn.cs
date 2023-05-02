@@ -17,6 +17,7 @@ namespace InciGest
         public VentanaLogIn()
         {
             InitializeComponent();
+            MaximizeBox = false;
             passwordBox.PasswordChar = '•'; //No aparece la contraseña
         }
 

@@ -18,6 +18,7 @@ namespace InciGest
         public VentanaAgregarUser()
         {
             InitializeComponent();
+            MaximizeBox = false;
             passwordNuevo.PasswordChar = '·';
         }
 
