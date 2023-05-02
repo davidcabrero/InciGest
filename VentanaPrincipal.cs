@@ -288,7 +288,10 @@ namespace InciGest
 
         private void botonAsignar_Click(object sender, EventArgs e)
         {
-            int codInci = Int32.Parse(idInci.Text);
+            string codigo = idInci.Text;
+            string[] codInciStr = codigo.Split(':');
+            string codInci2 = codInciStr[1];
+            int codInci = Int32.Parse(codInci2);
             if (conexion.asignarInci(elegirUsuario.SelectedItem.ToString(), codInci))
             {
                 MessageBox.Show("Se ha asignado la incidencia");
@@ -372,6 +375,7 @@ namespace InciGest
         private void botonVolverAdmin_Click(object sender, EventArgs e)
         {
             panelVerUsers.Hide();
+            tablaUsuarios.Rows.Clear();
         }
 
         private void botonEliminarUser_Click(object sender, EventArgs e)
