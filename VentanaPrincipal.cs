@@ -34,7 +34,7 @@ namespace InciGest
             panelIncidencia.Hide();
             panelEditarPerfil.Hide();
             perfilUuario.LabelText = user;
-            textoArchivo.Hide();
+            panelVerUsers.Hide();
             verEstadisticas();
         }
 
@@ -344,7 +344,33 @@ namespace InciGest
 
         private void verUsers_Click(object sender, EventArgs e)
         {
+            panelVerUsers.Show();
 
+            int numFilas = 0; //Sacar número de usuarios
+            incidencias = conexion.getDatosPorUsuarios();
+            numFilas = incidencias.Rows.Count;
+
+            for (int i = 0; i < numFilas; i++)
+            {
+                string nombre = incidencias.Rows[i]["nombre"].ToString();
+                string apellido = incidencias.Rows[i]["apellido"].ToString();
+                string usuario = incidencias.Rows[i]["DNI"].ToString();
+                tablaUsuarios.Rows.Add(new Object[] { nombre, apellido, usuario });
+            }
+        }
+
+        internal static string usuarioEnvio;
+
+        private void botonEnviarMensaje_Click(object sender, EventArgs e)
+        {
+            usuarioEnvio = utils.GetValorCelda(tablaUsuarios, 2);
+            VentanaMensaje v1 = new VentanaMensaje();
+            v1.Show();
+        }
+
+        private void botonVolverAdmin_Click(object sender, EventArgs e)
+        {
+            panelVerUsers.Hide();
         }
     }
 }

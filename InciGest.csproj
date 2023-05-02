@@ -114,6 +114,7 @@
       <HintPath>packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -130,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="utils.cs" />
     <Compile Include="VentanaAgregarUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +152,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VentanaMensaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaMensaje.Designer.cs">
+      <DependentUpon>VentanaMensaje.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +183,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VentanaMensaje.resx">
+      <DependentUpon>VentanaMensaje.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanaPrincipal.resx">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
