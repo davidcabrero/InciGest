@@ -72,7 +72,8 @@
             this.textoMensaje.IconRight = null;
             this.textoMensaje.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.textoMensaje.Lines = new string[0];
-            this.textoMensaje.Location = new System.Drawing.Point(12, 133);
+            this.textoMensaje.Location = new System.Drawing.Point(16, 164);
+            this.textoMensaje.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textoMensaje.MaxLength = 32767;
             this.textoMensaje.MinimumSize = new System.Drawing.Size(1, 1);
             this.textoMensaje.Modified = false;
@@ -98,7 +99,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.textoMensaje.OnIdleState = stateProperties4;
-            this.textoMensaje.Padding = new System.Windows.Forms.Padding(3);
+            this.textoMensaje.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textoMensaje.PasswordChar = '\0';
             this.textoMensaje.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.textoMensaje.PlaceholderText = "Enter text";
@@ -108,7 +109,7 @@
             this.textoMensaje.SelectionLength = 0;
             this.textoMensaje.SelectionStart = 0;
             this.textoMensaje.ShortcutsEnabled = true;
-            this.textoMensaje.Size = new System.Drawing.Size(776, 283);
+            this.textoMensaje.Size = new System.Drawing.Size(1035, 348);
             this.textoMensaje.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.textoMensaje.TabIndex = 1;
             this.textoMensaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -146,7 +147,8 @@
             this.textoAsunto.IconRight = null;
             this.textoAsunto.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.textoAsunto.Lines = new string[0];
-            this.textoAsunto.Location = new System.Drawing.Point(86, 86);
+            this.textoAsunto.Location = new System.Drawing.Point(115, 106);
+            this.textoAsunto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textoAsunto.MaxLength = 32767;
             this.textoAsunto.MinimumSize = new System.Drawing.Size(1, 1);
             this.textoAsunto.Modified = false;
@@ -172,7 +174,7 @@
             stateProperties8.ForeColor = System.Drawing.Color.Empty;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.textoAsunto.OnIdleState = stateProperties8;
-            this.textoAsunto.Padding = new System.Windows.Forms.Padding(3);
+            this.textoAsunto.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textoAsunto.PasswordChar = '\0';
             this.textoAsunto.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.textoAsunto.PlaceholderText = "Enter text";
@@ -182,7 +184,7 @@
             this.textoAsunto.SelectionLength = 0;
             this.textoAsunto.SelectionStart = 0;
             this.textoAsunto.ShortcutsEnabled = true;
-            this.textoAsunto.Size = new System.Drawing.Size(702, 41);
+            this.textoAsunto.Size = new System.Drawing.Size(936, 50);
             this.textoAsunto.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.textoAsunto.TabIndex = 2;
             this.textoAsunto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -234,13 +236,14 @@
             this.botonEnviar.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
             this.botonEnviar.IconSize = 25;
             this.botonEnviar.IdleBorderColor = System.Drawing.Color.DodgerBlue;
-            this.botonEnviar.IdleBorderRadius = 37;
+            this.botonEnviar.IdleBorderRadius = 46;
             this.botonEnviar.IdleBorderThickness = 1;
             this.botonEnviar.IdleFillColor = System.Drawing.Color.DodgerBlue;
             this.botonEnviar.IdleIconLeftImage = null;
             this.botonEnviar.IdleIconRightImage = null;
             this.botonEnviar.IndicateFocus = false;
-            this.botonEnviar.Location = new System.Drawing.Point(324, 431);
+            this.botonEnviar.Location = new System.Drawing.Point(432, 530);
+            this.botonEnviar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.botonEnviar.Name = "botonEnviar";
             this.botonEnviar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.botonEnviar.OnDisabledState.BorderRadius = 1;
@@ -274,7 +277,7 @@
             this.botonEnviar.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.botonEnviar.OnPressedState.IconLeftImage = null;
             this.botonEnviar.OnPressedState.IconRightImage = null;
-            this.botonEnviar.Size = new System.Drawing.Size(150, 39);
+            this.botonEnviar.Size = new System.Drawing.Size(200, 48);
             this.botonEnviar.TabIndex = 5;
             this.botonEnviar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.botonEnviar.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -286,9 +289,10 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 86);
+            this.label1.Location = new System.Drawing.Point(16, 106);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 41);
+            this.label1.Size = new System.Drawing.Size(91, 50);
             this.label1.TabIndex = 6;
             this.label1.Text = "Asunto:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -296,24 +300,27 @@
             // mensajeLabel
             // 
             this.mensajeLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mensajeLabel.Location = new System.Drawing.Point(12, 27);
+            this.mensajeLabel.Location = new System.Drawing.Point(16, 33);
+            this.mensajeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mensajeLabel.Name = "mensajeLabel";
-            this.mensajeLabel.Size = new System.Drawing.Size(776, 41);
+            this.mensajeLabel.Size = new System.Drawing.Size(1035, 50);
             this.mensajeLabel.TabIndex = 7;
             this.mensajeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // VentanaMensaje
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 482);
+            this.ClientSize = new System.Drawing.Size(1067, 593);
             this.Controls.Add(this.mensajeLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.botonEnviar);
             this.Controls.Add(this.textoAsunto);
             this.Controls.Add(this.textoMensaje);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "VentanaMensaje";
-            this.Text = "VentanaMensaje";
+            this.Text = "Enviar Mensaje";
             this.ResumeLayout(false);
 
         }

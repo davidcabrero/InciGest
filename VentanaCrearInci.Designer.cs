@@ -518,8 +518,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 526);
             this.Controls.Add(this.panelCrearInci);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VentanaCrearInci";
-            this.Text = "VentanaCrearInci";
+            this.Text = "Crear Incidencia";
             this.panelCrearInci.ResumeLayout(false);
             this.ResumeLayout(false);
 
