@@ -201,6 +201,48 @@ namespace InciGest
             }
         }
 
+        public DataTable getMensajes(int codInci) //Datos de los mensajes
+        {
+            try
+            {
+                conexion.Close(); //Cierra la conexión anterior
+                conexion.Open();
+                Console.WriteLine("codigo_"+codInci);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM mensajes WHERE id_incidencia = @codInci", conexion);
+                consulta.Parameters.AddWithValue("@codInci", codInci);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable datos = new DataTable();
+                datos.Load(resultado);
+                conexion.Close();
+                return datos;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
+
+        public Boolean enviaMensajeChat(String user, String mensaje, int codInci) //enviar mensajes
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("INSERT INTO mensajes (usuario, mensaje, id_incidencia) VALUES (@user, @mensaje, @codInci)", conexion); //datos a introducir, se introducen los string en los campos de la bbdd.
+                consulta.Parameters.AddWithValue("@user", user);
+                consulta.Parameters.AddWithValue("@mensaje", mensaje);
+                consulta.Parameters.AddWithValue("@codInci", codInci);
+
+                consulta.ExecuteNonQuery();
+
+                conexion.Close();
+                return true;
+            }
+            catch (MySqlException e)
+            {
+                return false;
+            }
+        }
+
         public DataTable comprobarRegistro() //Para comprobar que no se repiten datos en la bbdd que son únicos de un usuario.
         {
             try

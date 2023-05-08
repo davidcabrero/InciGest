@@ -85,7 +85,6 @@ namespace InciGest
                 int fila = e.RowIndex;
                 String codInci1 = tablaIncidencias.Rows[e.RowIndex].Cells[0].Value.ToString();
                 int codInci = Int32.Parse(codInci1);
-                Console.WriteLine(codInci);
 
                 incidencias = conexion.getDatosInci(codInci);
 
@@ -103,6 +102,7 @@ namespace InciGest
                 fechaInci.Text = incidencias.Rows[0]["fecha"].ToString();
                 idInci.Text = "Código: " + incidencias.Rows[0]["id_incidencia"].ToString();
                 userAsignado.Text = "Usuario: " + incidencias.Rows[0]["dni_usuarioAsignado"].ToString();
+                ipTerminal.Text = incidencias.Rows[0]["ip_terminal"].ToString();
             }
         }
 
@@ -519,6 +519,19 @@ namespace InciGest
 
                 MessageBox.Show("Informe generado en la ruta C:\\Incigest\\Descargas");
             }
+        }
+
+        internal static int codInci;
+
+        private void botonNotas_Click(object sender, EventArgs e)
+        {
+            string codigo = idInci.Text;
+            string[] codInciStr = codigo.Split(':');
+            string codInci2 = codInciStr[1];
+            codInci = Int32.Parse(codInci2);
+
+            VentanaNotas v1 = new VentanaNotas();
+            v1.Show();
         }
     }
 }
