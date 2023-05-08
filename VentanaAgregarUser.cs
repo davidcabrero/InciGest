@@ -27,17 +27,16 @@ namespace InciGest
             incidencias = conexion.comprobarRegistro();
 
             int perfil = 0;
-            if (perfilNuevo.SelectedItem.ToString().Equals("Desarrollador"))
+            if (!perfilNuevo.SelectedItem.ToString().Equals(""))
             {
-                perfil = 1;
-            }
-            else
-            {
-                MessageBox.Show("Complete todos los campos");
-            }
-            if (perfilNuevo.SelectedItem.ToString().Equals("Administrador"))
-            {
-                perfil = 2;
+                if (perfilNuevo.SelectedItem.ToString().Equals("Desarrollador"))
+                {
+                    perfil = 1;
+                }
+                if (perfilNuevo.SelectedItem.ToString().Equals("Administrador"))
+                {
+                    perfil = 2;
+                }
             }
             else
             {
@@ -53,7 +52,7 @@ namespace InciGest
                 {
                     MessageBox.Show("Usuario Registrado"); //Se añade el usuario
                     VentanaAgregarUser v1 = new VentanaAgregarUser();
-                    v1.Dispose();
+                    v1.Hide();
                 }
                 else
                 {

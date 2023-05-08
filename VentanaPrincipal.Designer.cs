@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaPrincipal));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
@@ -73,10 +74,11 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges16 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges17 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges18 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.menuPrincipal = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panelIncidencia = new Bunifu.UI.WinForms.BunifuPanel();
+            this.botonNotas = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.ipTerminal = new System.Windows.Forms.Label();
             this.botonEstado = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.userAsignado = new System.Windows.Forms.Label();
             this.idInci = new System.Windows.Forms.Label();
@@ -114,8 +116,6 @@
             this.panelPerfil = new System.Windows.Forms.Panel();
             this.botonCambiarPassword = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.botonEditarPerfil = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
-            this.label1 = new System.Windows.Forms.Label();
             this.labelPerfil = new System.Windows.Forms.Label();
             this.perfilUuario = new Bunifu.Framework.UI.BunifuTileButton();
             this.adminTab = new System.Windows.Forms.TabPage();
@@ -141,8 +141,6 @@
             this.explorador = new System.Windows.Forms.FolderBrowserDialog();
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.ipTerminal = new System.Windows.Forms.Label();
-            this.botonNotas = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.menuPrincipal.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panelIncidencia.SuspendLayout();
@@ -151,7 +149,6 @@
             this.tabPage2.SuspendLayout();
             this.panelEditarPerfil.SuspendLayout();
             this.panelPerfil.SuspendLayout();
-            this.bunifuCards1.SuspendLayout();
             this.adminTab.SuspendLayout();
             this.panelVerUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaUsuarios)).BeginInit();
@@ -233,6 +230,104 @@
             this.panelIncidencia.ShowBorders = true;
             this.panelIncidencia.Size = new System.Drawing.Size(862, 523);
             this.panelIncidencia.TabIndex = 8;
+            // 
+            // botonNotas
+            // 
+            this.botonNotas.AllowAnimations = true;
+            this.botonNotas.AllowMouseEffects = true;
+            this.botonNotas.AllowToggling = false;
+            this.botonNotas.AnimationSpeed = 200;
+            this.botonNotas.AutoGenerateColors = false;
+            this.botonNotas.AutoRoundBorders = true;
+            this.botonNotas.AutoSizeLeftIcon = true;
+            this.botonNotas.AutoSizeRightIcon = true;
+            this.botonNotas.BackColor = System.Drawing.Color.Transparent;
+            this.botonNotas.BackColor1 = System.Drawing.Color.SteelBlue;
+            this.botonNotas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botonNotas.BackgroundImage")));
+            this.botonNotas.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.botonNotas.ButtonText = "Notas";
+            this.botonNotas.ButtonTextMarginLeft = 0;
+            this.botonNotas.ColorContrastOnClick = 45;
+            this.botonNotas.ColorContrastOnHover = 45;
+            this.botonNotas.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.botonNotas.CustomizableEdges = borderEdges1;
+            this.botonNotas.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.botonNotas.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.botonNotas.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.botonNotas.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.botonNotas.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.botonNotas.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.botonNotas.ForeColor = System.Drawing.Color.White;
+            this.botonNotas.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonNotas.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.botonNotas.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.botonNotas.IconMarginLeft = 11;
+            this.botonNotas.IconPadding = 10;
+            this.botonNotas.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.botonNotas.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.botonNotas.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.botonNotas.IconSize = 25;
+            this.botonNotas.IdleBorderColor = System.Drawing.Color.DodgerBlue;
+            this.botonNotas.IdleBorderRadius = 37;
+            this.botonNotas.IdleBorderThickness = 1;
+            this.botonNotas.IdleFillColor = System.Drawing.Color.SteelBlue;
+            this.botonNotas.IdleIconLeftImage = null;
+            this.botonNotas.IdleIconRightImage = null;
+            this.botonNotas.IndicateFocus = false;
+            this.botonNotas.Location = new System.Drawing.Point(530, 452);
+            this.botonNotas.Name = "botonNotas";
+            this.botonNotas.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.botonNotas.OnDisabledState.BorderRadius = 1;
+            this.botonNotas.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.botonNotas.OnDisabledState.BorderThickness = 1;
+            this.botonNotas.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.botonNotas.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.botonNotas.OnDisabledState.IconLeftImage = null;
+            this.botonNotas.OnDisabledState.IconRightImage = null;
+            this.botonNotas.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.botonNotas.onHoverState.BorderRadius = 1;
+            this.botonNotas.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.botonNotas.onHoverState.BorderThickness = 1;
+            this.botonNotas.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.botonNotas.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.botonNotas.onHoverState.IconLeftImage = null;
+            this.botonNotas.onHoverState.IconRightImage = null;
+            this.botonNotas.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.botonNotas.OnIdleState.BorderRadius = 1;
+            this.botonNotas.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.botonNotas.OnIdleState.BorderThickness = 1;
+            this.botonNotas.OnIdleState.FillColor = System.Drawing.Color.SteelBlue;
+            this.botonNotas.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.botonNotas.OnIdleState.IconLeftImage = null;
+            this.botonNotas.OnIdleState.IconRightImage = null;
+            this.botonNotas.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.botonNotas.OnPressedState.BorderRadius = 1;
+            this.botonNotas.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.botonNotas.OnPressedState.BorderThickness = 1;
+            this.botonNotas.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.botonNotas.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.botonNotas.OnPressedState.IconLeftImage = null;
+            this.botonNotas.OnPressedState.IconRightImage = null;
+            this.botonNotas.Size = new System.Drawing.Size(191, 39);
+            this.botonNotas.TabIndex = 15;
+            this.botonNotas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.botonNotas.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.botonNotas.TextMarginLeft = 0;
+            this.botonNotas.TextPadding = new System.Windows.Forms.Padding(0);
+            this.botonNotas.UseDefaultRadiusAndThickness = true;
+            this.botonNotas.Click += new System.EventHandler(this.botonNotas_Click);
+            // 
+            // ipTerminal
+            // 
+            this.ipTerminal.Location = new System.Drawing.Point(11, 365);
+            this.ipTerminal.Name = "ipTerminal";
+            this.ipTerminal.Size = new System.Drawing.Size(183, 36);
+            this.ipTerminal.TabIndex = 14;
+            this.ipTerminal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // botonEstado
             // 
@@ -1075,7 +1170,7 @@
             this.panelEditarPerfil.Controls.Add(this.emailText);
             this.panelEditarPerfil.Controls.Add(this.apellidoText);
             this.panelEditarPerfil.Controls.Add(this.nombreText);
-            this.panelEditarPerfil.Location = new System.Drawing.Point(3, 3);
+            this.panelEditarPerfil.Location = new System.Drawing.Point(0, 0);
             this.panelEditarPerfil.Name = "panelEditarPerfil";
             this.panelEditarPerfil.Size = new System.Drawing.Size(862, 523);
             this.panelEditarPerfil.TabIndex = 12;
@@ -1640,7 +1735,6 @@
             // 
             this.panelPerfil.Controls.Add(this.botonCambiarPassword);
             this.panelPerfil.Controls.Add(this.botonEditarPerfil);
-            this.panelPerfil.Controls.Add(this.bunifuCards1);
             this.panelPerfil.Controls.Add(this.labelPerfil);
             this.panelPerfil.Controls.Add(this.perfilUuario);
             this.panelPerfil.Location = new System.Drawing.Point(3, 3);
@@ -1695,7 +1789,7 @@
             this.botonCambiarPassword.IdleIconLeftImage = null;
             this.botonCambiarPassword.IdleIconRightImage = null;
             this.botonCambiarPassword.IndicateFocus = false;
-            this.botonCambiarPassword.Location = new System.Drawing.Point(497, 383);
+            this.botonCambiarPassword.Location = new System.Drawing.Point(152, 387);
             this.botonCambiarPassword.Name = "botonCambiarPassword";
             this.botonCambiarPassword.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.botonCambiarPassword.OnDisabledState.BorderRadius = 1;
@@ -1729,7 +1823,7 @@
             this.botonCambiarPassword.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.botonCambiarPassword.OnPressedState.IconLeftImage = null;
             this.botonCambiarPassword.OnPressedState.IconRightImage = null;
-            this.botonCambiarPassword.Size = new System.Drawing.Size(300, 39);
+            this.botonCambiarPassword.Size = new System.Drawing.Size(559, 39);
             this.botonCambiarPassword.TabIndex = 9;
             this.botonCambiarPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.botonCambiarPassword.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1785,7 +1879,7 @@
             this.botonEditarPerfil.IdleIconLeftImage = null;
             this.botonEditarPerfil.IdleIconRightImage = null;
             this.botonEditarPerfil.IndicateFocus = false;
-            this.botonEditarPerfil.Location = new System.Drawing.Point(497, 319);
+            this.botonEditarPerfil.Location = new System.Drawing.Point(152, 318);
             this.botonEditarPerfil.Name = "botonEditarPerfil";
             this.botonEditarPerfil.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.botonEditarPerfil.OnDisabledState.BorderRadius = 1;
@@ -1819,7 +1913,7 @@
             this.botonEditarPerfil.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.botonEditarPerfil.OnPressedState.IconLeftImage = null;
             this.botonEditarPerfil.OnPressedState.IconRightImage = null;
-            this.botonEditarPerfil.Size = new System.Drawing.Size(300, 39);
+            this.botonEditarPerfil.Size = new System.Drawing.Size(559, 39);
             this.botonEditarPerfil.TabIndex = 8;
             this.botonEditarPerfil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.botonEditarPerfil.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1827,31 +1921,6 @@
             this.botonEditarPerfil.TextPadding = new System.Windows.Forms.Padding(0);
             this.botonEditarPerfil.UseDefaultRadiusAndThickness = true;
             this.botonEditarPerfil.Click += new System.EventHandler(this.botonEditarPerfil_Click);
-            // 
-            // bunifuCards1
-            // 
-            this.bunifuCards1.BackColor = System.Drawing.Color.White;
-            this.bunifuCards1.BorderRadius = 5;
-            this.bunifuCards1.BottomSahddow = false;
-            this.bunifuCards1.color = System.Drawing.Color.Tomato;
-            this.bunifuCards1.Controls.Add(this.label1);
-            this.bunifuCards1.LeftSahddow = false;
-            this.bunifuCards1.Location = new System.Drawing.Point(35, 282);
-            this.bunifuCards1.Name = "bunifuCards1";
-            this.bunifuCards1.RightSahddow = false;
-            this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(383, 178);
-            this.bunifuCards1.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(98, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Grupos de Soporte";
             // 
             // labelPerfil
             // 
@@ -2702,104 +2771,6 @@
             this.elementHost1.Text = "elementHost1";
             this.elementHost1.Child = null;
             // 
-            // ipTerminal
-            // 
-            this.ipTerminal.Location = new System.Drawing.Point(11, 365);
-            this.ipTerminal.Name = "ipTerminal";
-            this.ipTerminal.Size = new System.Drawing.Size(183, 36);
-            this.ipTerminal.TabIndex = 14;
-            this.ipTerminal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // botonNotas
-            // 
-            this.botonNotas.AllowAnimations = true;
-            this.botonNotas.AllowMouseEffects = true;
-            this.botonNotas.AllowToggling = false;
-            this.botonNotas.AnimationSpeed = 200;
-            this.botonNotas.AutoGenerateColors = false;
-            this.botonNotas.AutoRoundBorders = true;
-            this.botonNotas.AutoSizeLeftIcon = true;
-            this.botonNotas.AutoSizeRightIcon = true;
-            this.botonNotas.BackColor = System.Drawing.Color.Transparent;
-            this.botonNotas.BackColor1 = System.Drawing.Color.SteelBlue;
-            this.botonNotas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botonNotas.BackgroundImage")));
-            this.botonNotas.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.botonNotas.ButtonText = "Notas";
-            this.botonNotas.ButtonTextMarginLeft = 0;
-            this.botonNotas.ColorContrastOnClick = 45;
-            this.botonNotas.ColorContrastOnHover = 45;
-            this.botonNotas.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.botonNotas.CustomizableEdges = borderEdges1;
-            this.botonNotas.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.botonNotas.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.botonNotas.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.botonNotas.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.botonNotas.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.botonNotas.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.botonNotas.ForeColor = System.Drawing.Color.White;
-            this.botonNotas.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonNotas.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.botonNotas.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.botonNotas.IconMarginLeft = 11;
-            this.botonNotas.IconPadding = 10;
-            this.botonNotas.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.botonNotas.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.botonNotas.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.botonNotas.IconSize = 25;
-            this.botonNotas.IdleBorderColor = System.Drawing.Color.DodgerBlue;
-            this.botonNotas.IdleBorderRadius = 37;
-            this.botonNotas.IdleBorderThickness = 1;
-            this.botonNotas.IdleFillColor = System.Drawing.Color.SteelBlue;
-            this.botonNotas.IdleIconLeftImage = null;
-            this.botonNotas.IdleIconRightImage = null;
-            this.botonNotas.IndicateFocus = false;
-            this.botonNotas.Location = new System.Drawing.Point(530, 452);
-            this.botonNotas.Name = "botonNotas";
-            this.botonNotas.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.botonNotas.OnDisabledState.BorderRadius = 1;
-            this.botonNotas.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.botonNotas.OnDisabledState.BorderThickness = 1;
-            this.botonNotas.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.botonNotas.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.botonNotas.OnDisabledState.IconLeftImage = null;
-            this.botonNotas.OnDisabledState.IconRightImage = null;
-            this.botonNotas.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.botonNotas.onHoverState.BorderRadius = 1;
-            this.botonNotas.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.botonNotas.onHoverState.BorderThickness = 1;
-            this.botonNotas.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.botonNotas.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.botonNotas.onHoverState.IconLeftImage = null;
-            this.botonNotas.onHoverState.IconRightImage = null;
-            this.botonNotas.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.botonNotas.OnIdleState.BorderRadius = 1;
-            this.botonNotas.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.botonNotas.OnIdleState.BorderThickness = 1;
-            this.botonNotas.OnIdleState.FillColor = System.Drawing.Color.SteelBlue;
-            this.botonNotas.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.botonNotas.OnIdleState.IconLeftImage = null;
-            this.botonNotas.OnIdleState.IconRightImage = null;
-            this.botonNotas.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.botonNotas.OnPressedState.BorderRadius = 1;
-            this.botonNotas.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.botonNotas.OnPressedState.BorderThickness = 1;
-            this.botonNotas.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.botonNotas.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.botonNotas.OnPressedState.IconLeftImage = null;
-            this.botonNotas.OnPressedState.IconRightImage = null;
-            this.botonNotas.Size = new System.Drawing.Size(191, 39);
-            this.botonNotas.TabIndex = 15;
-            this.botonNotas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.botonNotas.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.botonNotas.TextMarginLeft = 0;
-            this.botonNotas.TextPadding = new System.Windows.Forms.Padding(0);
-            this.botonNotas.UseDefaultRadiusAndThickness = true;
-            this.botonNotas.Click += new System.EventHandler(this.botonNotas_Click);
-            // 
             // VentanaPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -2819,8 +2790,6 @@
             this.panelEditarPerfil.ResumeLayout(false);
             this.panelEditarPerfil.PerformLayout();
             this.panelPerfil.ResumeLayout(false);
-            this.bunifuCards1.ResumeLayout(false);
-            this.bunifuCards1.PerformLayout();
             this.adminTab.ResumeLayout(false);
             this.panelVerUsers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tablaUsuarios)).EndInit();
@@ -2862,8 +2831,6 @@
         private System.Windows.Forms.Panel panelPerfil;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton botonCambiarPassword;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton botonEditarPerfil;
-        private Bunifu.Framework.UI.BunifuCards bunifuCards1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelPerfil;
         private Bunifu.Framework.UI.BunifuTileButton perfilUuario;
         private Bunifu.UI.WinForms.BunifuTextBox editPassword;

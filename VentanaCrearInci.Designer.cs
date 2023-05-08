@@ -126,7 +126,7 @@
             this.botonCrear.IdleIconLeftImage = null;
             this.botonCrear.IdleIconRightImage = null;
             this.botonCrear.IndicateFocus = false;
-            this.botonCrear.Location = new System.Drawing.Point(300, 457);
+            this.botonCrear.Location = new System.Drawing.Point(331, 458);
             this.botonCrear.Name = "botonCrear";
             this.botonCrear.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.botonCrear.OnDisabledState.BorderRadius = 20;
@@ -207,7 +207,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(88, 225);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(128, 23);
+            this.label4.Size = new System.Drawing.Size(288, 23);
             this.label4.TabIndex = 7;
             this.label4.Text = "Descripción:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

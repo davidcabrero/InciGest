@@ -28,7 +28,8 @@ namespace InciGest
             if (conexion.insertaIncidencia(tituloText.Text, eligePrioridad.SelectedItem.ToString(), ipText.Text, eligeGrupo.SelectedItem.ToString(), eligeAplicacion.SelectedItem.ToString(), descripcionText.Text, user))
             {
                 MessageBox.Show("Incidencia Añadida"); //Se añade la inci
-                panelCrearInci.Hide();
+                VentanaCrearInci v1 = new VentanaCrearInci();
+                v1.Hide();
             }
             else
             {
