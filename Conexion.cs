@@ -93,8 +93,9 @@ namespace InciGest
             try
             {
                 conexion.Open();
-                MySqlCommand consulta = new MySqlCommand("DELETE * FROM incidencias WHERE id_incidencia = @codInci", conexion);
-                consulta.Parameters.AddWithValue("@codInci", codInci);
+                MySqlCommand consulta = new MySqlCommand("DELETE FROM incidencias WHERE id_incidencia = '@id'", conexion); //datos a introducir, se introducen los string en los campos de la bbdd.
+                consulta.Parameters.AddWithValue("@id", codInci);
+
                 consulta.ExecuteNonQuery();
 
                 conexion.Close();
@@ -283,12 +284,32 @@ namespace InciGest
             }
         }
 
+        public Boolean editaPerfil(String usuario, int perfil) //Para editar el perfil de un usuario
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("UPDATE usuario SET perfil = @numPerfil WHERE DNI = @DNI", conexion); //datos a introducir, se introducen los string en los campos de la bbdd.
+                consulta.Parameters.AddWithValue("@DNI", usuario);
+                consulta.Parameters.AddWithValue("@numPerfil", perfil);
+
+                consulta.ExecuteNonQuery();
+
+                conexion.Close();
+                return true;
+            }
+            catch (MySqlException e)
+            {
+                return false;
+            }
+        }
+
         public Boolean eliminaUser(String DNI) //Para eliminar el perfil de un usuario
         {
             try
             {
                 conexion.Open();
-                MySqlCommand consulta = new MySqlCommand("DELETE * FROM usuario WHERE DNI = @DNI", conexion); //datos a introducir, se introducen los string en los campos de la bbdd.
+                MySqlCommand consulta = new MySqlCommand("DELETE FROM usuario WHERE DNI = @DNI", conexion); //datos a introducir, se introducen los string en los campos de la bbdd.
                 consulta.Parameters.AddWithValue("@DNI", DNI);
 
                 consulta.ExecuteNonQuery();

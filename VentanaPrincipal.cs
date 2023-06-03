@@ -36,7 +36,6 @@ namespace InciGest
             panelEditarPerfil.Hide();
             perfilUuario.LabelText = user;
             panelVerUsers.Hide();
-            verEstadisticas();
         }
 
         public void establecerPerfil()
@@ -144,6 +143,9 @@ namespace InciGest
 
         private void menuPrincipal_SelectedIndexChanged(object sender, EventArgs e)
         {
+            verEstadisticas();
+
+
             if (menuPrincipal.SelectedTab.Text.Equals("Cerrar Sesión")) //Cierra sesión
             {
                 VentanaLogIn.usuario = "";
@@ -395,7 +397,7 @@ namespace InciGest
             {
                 if (conexion.eliminaUser(usuarioEliminar))
                 {
-                    MessageBox.Show("Usuario eliminado"); //Se elimina el usuario seleccionado
+                    MessageBox.Show("Usuario eliminado"); //Se cambia el perfil
                 }
                 else
                 {
@@ -411,21 +413,21 @@ namespace InciGest
         private void botonEditar_Click(object sender, EventArgs e) //Para editar perfil desarrollador o admin
         {
             String usuarioEdit = utils.GetValorCelda(tablaUsuarios, 2);
-
             incidencias = conexion.getDatosPerfil(usuarioEdit);
-            String perfilUser = incidencias.Rows[0]["perfil"].ToString();
+            string perfil1 = incidencias.Rows[0]["perfil"].ToString();
+            int perfil = Int32.Parse(perfil1);
 
-            if (perfilUser == "1")
+            if (perfil == 1)
             {
                 string message = "El usuario " + usuarioEdit + " tiene perfil de desarrollador ¿Desea hacerle admin?";
-                string title = "Eliminar Usuario";
+                string title = "Cambiar Perfil";
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show(message, title, buttons);
                 if (result == DialogResult.Yes)
                 {
-                    if (conexion.eliminaUser(usuarioEdit))
+                    if (conexion.editaPerfil(usuarioEdit, 2))
                     {
-                        MessageBox.Show("Perfil cambiado"); //Se elimina el usuario seleccionado
+                        MessageBox.Show("Perfil cambiado"); //Se cambia el perfil
                     }
                     else
                     {
@@ -437,15 +439,15 @@ namespace InciGest
 
                 }
             }
-            if (perfilUser == "2")
+            if (perfil == 2)
             {
                 string message = "El usuario " + usuarioEdit + " tiene perfil de administrador ¿Desea hacerle desarrollador?";
-                string title = "Eliminar Usuario";
+                string title = "Cambiar Perfil";
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show(message, title, buttons);
                 if (result == DialogResult.Yes)
                 {
-                    if (conexion.eliminaUser(usuarioEdit))
+                    if (conexion.editaPerfil(usuarioEdit, 1))
                     {
                         if (user.Equals(usuarioEdit)) //Si el usuario cambiado es el mismo logeado
                         {
